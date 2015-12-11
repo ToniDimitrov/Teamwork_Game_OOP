@@ -7,11 +7,11 @@ namespace Game.Models
         private int height;
         private int width;
 
-        public Size(int height, int width)
+        public Size(int width, int height)
             : this()
         {
-            this.Height = height;
             this.Width = width;
+            this.Height = height;
         }
 
         public int Height

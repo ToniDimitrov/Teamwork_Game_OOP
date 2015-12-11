@@ -24,7 +24,7 @@ namespace Game.Models.Heroes
         public void InitImagePlayer()
         {
             this.imagePlayer = new PictureBox();
-            this.imagePlayer.Image = Image.FromFile("spartan.jpg");
+            this.imagePlayer.Image = Image.FromFile(@"C:\Users\user23\Documents\Teamwork_Game_OOP\Game\Resources\Spartan30-45.jpg");
             this.imagePlayer.Size = new System.Drawing.Size(this.ObjectSize.Width,this.ObjectSize.Height);
             this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
             this.imagePlayer.Enabled = true;

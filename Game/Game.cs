@@ -12,7 +12,7 @@ namespace Game
 {
     public partial class Game : Form
     {
-        private Player player = new Player("player", new Point(20, 20), new Size(40, 30), 100, 100, 100,
+        private Player player = new Player("player", new Point(20, 20), new Size(30, 45), 100, 100, 100,
             new List<Item> {new Axe("Axe", new Point(0, 0), new Size(1, 1))});
         Panel[] ebanieMihailovgrad = new Panel[4];
         public Game()
@@ -28,7 +28,6 @@ namespace Game
                 Rectangle playerRectangle = new Rectangle(player.Location.X,player.Location.Y,player.ObjectSize.Width,player.ObjectSize.Height);
                 Panel panel = ebanieMihailovgrad[i];
                 Rectangle panelRectangle = new Rectangle(panel.Location.X,panel.Location.Y,panel.Width,panel.Height);
-
 
                 if (playerRectangle.IntersectsWith(panelRectangle))
                 {
