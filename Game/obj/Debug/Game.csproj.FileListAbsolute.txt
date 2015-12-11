@@ -1,0 +1,8 @@
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
+c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
