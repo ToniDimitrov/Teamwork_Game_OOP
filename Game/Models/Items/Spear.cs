@@ -1,6 +1,6 @@
 ﻿using Game.Models;
 
-namespace ConsoleApplication5.Models.Items
+namespace Game.Models.Items
 {
     internal class Spear : Item
     {

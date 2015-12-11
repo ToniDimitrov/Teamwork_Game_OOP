@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Game.Models;
 
-namespace ConsoleApplication5.Interfaces
+namespace Game.Interfaces
 {
     public interface ICollect
     {

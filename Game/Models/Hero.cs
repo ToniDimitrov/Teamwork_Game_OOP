@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using ConsoleApplication5.Interfaces;
-using ConsoleApplication5.Models;
+using Game.Interfaces;
 
 namespace Game.Models
 {

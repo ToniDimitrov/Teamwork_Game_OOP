@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsoleApplication5.Models
+namespace Game.Models
 {
     public struct Size
     {

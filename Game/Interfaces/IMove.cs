@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication5.Interfaces
+namespace Game.Interfaces
 {
     interface IMove
     {
-        void Move();
+        void Move(int movementLenght);
     }
 }

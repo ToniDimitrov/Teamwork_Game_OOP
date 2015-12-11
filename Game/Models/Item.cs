@@ -1,5 +1,5 @@
 ﻿using System;
-using ConsoleApplication5.Models;
+using Game.Models;
 
 namespace Game.Models
 {
