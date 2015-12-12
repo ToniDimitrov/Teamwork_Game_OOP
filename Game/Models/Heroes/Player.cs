@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Game.Interfaces;
 using Size = Game.Models.Size;
+using Game;
+
 
 namespace Game.Models.Heroes
 {
@@ -63,8 +66,11 @@ namespace Game.Models.Heroes
                 this.Location = new Point(this.Location.X + movementLenght, this.Location.Y);
                 this.imagePlayer.Location = new System.Drawing.Point(this.Location.X, this.Location.Y);
             }
+
+            
         }
 
-   
+       
+
     }
 }

@@ -14,7 +14,7 @@ namespace Game
     {
         private Player player = new Player("player", new Point(20, 20), new Size(30, 45), 100, 100, 100,
             new List<Item> {new Axe("Axe", new Point(0, 0), new Size(1, 1))});
-        Panel[] ebanieMihailovgrad = new Panel[4];
+        //Panel[] ebanieMihailovgrad = new Panel[4];
         public Game()
         {
             InitializeComponent();
@@ -23,19 +23,51 @@ namespace Game
         private void timerMovement_Tick(object sender, EventArgs e)
         {
             int movementLength = 2;
-            for (int i = 0; i < ebanieMihailovgrad.Length; i++)
-            {
-                Rectangle playerRectangle = new Rectangle(player.Location.X,player.Location.Y,player.ObjectSize.Width,player.ObjectSize.Height);
-                Panel panel = ebanieMihailovgrad[i];
-                Rectangle panelRectangle = new Rectangle(panel.Location.X,panel.Location.Y,panel.Width,panel.Height);
+            Point nextStep = new Point();
 
-                if (playerRectangle.IntersectsWith(panelRectangle))
-                {
-                    movementLength = 0;
-                }
-                
+            if (this.player.playerDown)
+            {
+                 nextStep = new Point(this.player.Location.X, this.player.Location.Y + movementLength);
             }
-            player.Move(movementLength);
+            else if (this.player.playerUp)
+            {
+                nextStep = new Point(this.player.Location.X, this.player.Location.Y - movementLength);
+            }
+            else if (this.player.playerLeft)
+            {
+                nextStep = new Point(this.player.Location.X - movementLength, this.player.Location.Y);
+            }
+            else if (this.player.playerRight)
+            {
+                nextStep = new Point(this.player.Location.X + movementLength, this.player.Location.Y);
+            }
+
+            if (ValidLocation(nextStep))
+            {
+                player.Move(movementLength);
+                //this.pictureBox1.Left += 1;
+                //this.pictureBox2.Left += 1;
+            }
+
+
+
+            //if (((Bitmap)pictureBox2.Image).GetPixel(this.player.Location.X, this.player.Location.Y) != System.Drawing.ColorTranslator.FromHtml("#010101"))
+            //{
+            //    player.Move(movementLength);
+            //}
+
+            //for (int i = 0; i < ebanieMihailovgrad.Length; i++)
+            //{
+            //    Rectangle playerRectangle = new Rectangle(player.Location.X,player.Location.Y,player.ObjectSize.Width,player.ObjectSize.Height);
+            //    Panel panel = ebanieMihailovgrad[i];
+            //    Rectangle panelRectangle = new Rectangle(panel.Location.X,panel.Location.Y,panel.Width,panel.Height);
+
+            //    if (playerRectangle.IntersectsWith(panelRectangle))
+            //    {
+            //        movementLength = 0;
+            //    }
+
+            //}
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
@@ -76,18 +108,28 @@ namespace Game
             }
         }
 
-        private void InitBlocks()
-        {
-            ebanieMihailovgrad[0] = panel2;
-            ebanieMihailovgrad[1] = panel3;
-            ebanieMihailovgrad[2] = panel5;
-            ebanieMihailovgrad[3] = panel6;
-        }
+        //private void InitBlocks()
+        //{
+        //    ebanieMihailovgrad[0] = panel2;
+        //    ebanieMihailovgrad[1] = panel3;
+        //    ebanieMihailovgrad[2] = panel5;
+        //    ebanieMihailovgrad[3] = panel6;
+        //}
         private void Game_Load(object sender, EventArgs e)
         {
-            backgroundPanel.Controls.Add(this.player.imagePlayer);
+
+            //backgroundPanel.Controls.Add(this.player.imagePlayer);
+            this.pictureBox1.Controls.Add(player.imagePlayer);
             this.player.imagePlayer.Show();
-            InitBlocks();
+            //InitBlocks();
         }
+
+        private bool ValidLocation(Point locationPoint)
+        {
+            return (((Bitmap)pictureBox2.Image).GetPixel(locationPoint.X, locationPoint.Y) !=
+                    System.Drawing.ColorTranslator.FromHtml("#000000"));
+        }
+
+
     }
 }

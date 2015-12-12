@@ -105,6 +105,11 @@
     <None Include="Resources\map.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\UnderMap1_Compressed.jpg" />
+    <None Include="Resources\UnderMap1.jpg" />
+    <None Include="Resources\UnderMap.jpg" />
+    <None Include="Resources\map1.jpg" />
+    <None Include="Resources\mapCompressed.jpg" />
     <Content Include="Resources\Spartan.jpg" />
     <Content Include="Resources\Spartan30-45.jpg" />
   </ItemGroup>
