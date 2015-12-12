@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Game.Interfaces
 {
     interface IMove
     {
-        void Move(int movementLenght);
+        void Move(int movementLenght, PictureBox pictBox);
     }
 }

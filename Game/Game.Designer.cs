@@ -46,19 +46,23 @@ namespace Game
             // 
             // Map
             // 
+            this.Map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Map.Image = global::Game.Properties.Resources.map1;
             this.Map.Location = new System.Drawing.Point(0, 0);
             this.Map.Name = "Map";
-            this.Map.Size = new System.Drawing.Size(2048, 2039);
+            this.Map.Size = new System.Drawing.Size(982, 606);
+            this.Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Map.TabIndex = 0;
             this.Map.TabStop = false;
             // 
             // UnderMapWithInpassableAreas
             // 
+            this.UnderMapWithInpassableAreas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnderMapWithInpassableAreas.Image = global::Game.Properties.Resources.UnderMap;
             this.UnderMapWithInpassableAreas.Location = new System.Drawing.Point(0, 0);
             this.UnderMapWithInpassableAreas.Name = "UnderMapWithInpassableAreas";
-            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2048, 2039);
+            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(982, 606);
+            this.UnderMapWithInpassableAreas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UnderMapWithInpassableAreas.TabIndex = 1;
             this.UnderMapWithInpassableAreas.TabStop = false;
             // 
@@ -67,8 +71,8 @@ namespace Game
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 606);
-            this.Controls.Add(this.Map);
             this.Controls.Add(this.UnderMapWithInpassableAreas);
+            this.Controls.Add(this.Map);
             this.DoubleBuffered = true;
             this.Name = "Game";
             this.Text = "Game";
@@ -80,12 +84,6 @@ namespace Game
             this.ResumeLayout(false);
 
         }
-
-        public PictureBox UnderMap
-        {
-            get { return this.UnderMapWithInpassableAreas; }
-        }
-
 
         #endregion
 

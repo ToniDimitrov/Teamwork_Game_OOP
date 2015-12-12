@@ -1,11 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Game.Interfaces;
-using Size = Game.Models.Size;
-using Game;
-
 
 namespace Game.Models.Heroes
 {
@@ -27,7 +23,7 @@ namespace Game.Models.Heroes
         public void InitImagePlayer()
         {
             this.imagePlayer = new PictureBox();
-            this.imagePlayer.Image = Image.FromFile(@"C:\Users\user23\Documents\Teamwork_Game_OOP\Game\Resources\Spartan30-45.jpg");
+            this.imagePlayer.Image = Image.FromFile("Spartan30-45.jpg");
             this.imagePlayer.Size = new System.Drawing.Size(this.ObjectSize.Width,this.ObjectSize.Height);
             this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
             this.imagePlayer.Enabled = true;
@@ -44,33 +40,41 @@ namespace Game.Models.Heroes
             this.Items.Remove(item);
         }
 
-        public void Move(int movementLenght)
+        public void Move(int movementLenght, PictureBox pictBox)
         {
+            Point locationBeforeMovement = new Point(this.Location.X,this.Location.Y);
+            Point nextPoint = new Point(this.Location.X, this.Location.Y);
+
             if (playerDown)
             {
-               this.Location= new Point(this.Location.X,this.Location.Y+movementLenght);
-                this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
+                nextPoint = new Point(this.Location.X, this.Location.Y + movementLenght);
             }
             else if (playerUp)
             {
-                this.Location = new Point(this.Location.X, this.Location.Y - movementLenght);
-                this.imagePlayer.Location = new System.Drawing.Point(this.Location.X, this.Location.Y);
+                nextPoint = new Point(this.Location.X, this.Location.Y - movementLenght);
             }
             else if (playerLeft)
             {
-                this.Location = new Point(this.Location.X - movementLenght, this.Location.Y);
-                this.imagePlayer.Location = new System.Drawing.Point(this.Location.X, this.Location.Y);
+                nextPoint = new Point(this.Location.X - movementLenght, this.Location.Y);
             }
             else if (playerRight)
             {
-                this.Location = new Point(this.Location.X + movementLenght, this.Location.Y);
-                this.imagePlayer.Location = new System.Drawing.Point(this.Location.X, this.Location.Y);
+                nextPoint = new Point(this.Location.X + movementLenght, this.Location.Y);
             }
 
-            
+            if (ValidateMove(pictBox, nextPoint))
+            {
+                this.Location = nextPoint;
+            }
+            else this.Location = locationBeforeMovement;
+
+            this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
         }
 
-       
-
+        private bool ValidateMove(PictureBox pictBox, Point nextPoint)
+        {
+            return (((Bitmap)pictBox.Image).GetPixel(nextPoint.X, nextPoint.Y) !=
+                    ColorTranslator.FromHtml("#000000"));
+        }
     }
 }

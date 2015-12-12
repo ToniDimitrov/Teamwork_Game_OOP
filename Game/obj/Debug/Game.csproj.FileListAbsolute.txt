@@ -16,3 +16,11 @@ C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAss
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
+D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
