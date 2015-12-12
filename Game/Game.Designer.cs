@@ -32,10 +32,10 @@ namespace Game
         {
             this.components = new System.ComponentModel.Container();
             this.timerMovement = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Map = new System.Windows.Forms.PictureBox();
+            this.UnderMapWithInpassableAreas = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Map)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).BeginInit();
             this.SuspendLayout();
             // 
             // timerMovement
@@ -44,54 +44,54 @@ namespace Game
             this.timerMovement.Interval = 5;
             this.timerMovement.Tick += new System.EventHandler(this.timerMovement_Tick);
             // 
-            // pictureBox1
+            // Map
             // 
-            this.pictureBox1.Image = global::Game.Properties.Resources.map1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(2048, 2039);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Map.Image = global::Game.Properties.Resources.map1;
+            this.Map.Location = new System.Drawing.Point(0, 0);
+            this.Map.Name = "Map";
+            this.Map.Size = new System.Drawing.Size(2048, 2039);
+            this.Map.TabIndex = 0;
+            this.Map.TabStop = false;
             // 
-            // pictureBox2
+            // UnderMapWithInpassableAreas
             // 
-            this.pictureBox2.Image = global::Game.Properties.Resources.UnderMap;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(2048, 2039);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.UnderMapWithInpassableAreas.Image = global::Game.Properties.Resources.UnderMap;
+            this.UnderMapWithInpassableAreas.Location = new System.Drawing.Point(0, 0);
+            this.UnderMapWithInpassableAreas.Name = "UnderMapWithInpassableAreas";
+            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2048, 2039);
+            this.UnderMapWithInpassableAreas.TabIndex = 1;
+            this.UnderMapWithInpassableAreas.TabStop = false;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 606);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Map);
+            this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.DoubleBuffered = true;
             this.Name = "Game";
             this.Text = "Game";
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         public PictureBox UnderMap
         {
-            get { return this.pictureBox2; }
+            get { return this.UnderMapWithInpassableAreas; }
         }
 
 
         #endregion
 
         private System.Windows.Forms.Timer timerMovement;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        public PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox Map;
+        public PictureBox UnderMapWithInpassableAreas;
     }
 }
 

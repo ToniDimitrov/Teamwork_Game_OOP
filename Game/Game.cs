@@ -119,14 +119,14 @@ namespace Game
         {
 
             //backgroundPanel.Controls.Add(this.player.imagePlayer);
-            this.pictureBox1.Controls.Add(player.imagePlayer);
+            this.Map.Controls.Add(player.imagePlayer);
             this.player.imagePlayer.Show();
             //InitBlocks();
         }
 
         private bool ValidLocation(Point locationPoint)
         {
-            return (((Bitmap)pictureBox2.Image).GetPixel(locationPoint.X, locationPoint.Y) !=
+            return (((Bitmap)UnderMapWithInpassableAreas.Image).GetPixel(locationPoint.X, locationPoint.Y) !=
                     System.Drawing.ColorTranslator.FromHtml("#000000"));
         }
 
