@@ -71,10 +71,20 @@ namespace Game.Models.Heroes
             this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
         }
 
-        private bool ValidateMove(PictureBox pictBox, Point nextPoint)
+        public bool ValidateMove(PictureBox pictBox, Point nextPoint)
         {
-            return (((Bitmap)pictBox.Image).GetPixel(nextPoint.X, nextPoint.Y) !=
-                    ColorTranslator.FromHtml("#000000"));
+            Point topLeftVertex = new Point(nextPoint.X,nextPoint.Y);
+            Point topRightVertex = new Point(nextPoint.X + this.ObjectSize.Width, nextPoint.Y);
+            Point bottomLeftVertex = new Point(nextPoint.X,nextPoint.Y + this.ObjectSize.Height);
+            Point bottomRightVertex= new Point(nextPoint.X+this.ObjectSize.Width,nextPoint.Y+this.ObjectSize.Height);
+
+            Color color = ColorTranslator.FromHtml("#000000");
+            Bitmap image = (Bitmap) pictBox.Image;
+
+            return (image.GetPixel(topLeftVertex.X, topLeftVertex.Y) != color) &&
+                   (image.GetPixel(topRightVertex.X, topRightVertex.Y) != color) &&
+                   (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
+                   (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color);
         }
     }
 }

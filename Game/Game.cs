@@ -82,7 +82,7 @@ namespace Game
 
         private void Game_Load(object sender, EventArgs e)
         {
-            this.UnderMapWithInpassableAreas.Controls.Add(player.imagePlayer);
+            this.Map.Controls.Add(player.imagePlayer);
             this.player.imagePlayer.Show();
         }
     }
