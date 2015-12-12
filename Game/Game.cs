@@ -84,6 +84,8 @@ namespace Game
         {
             this.Map.Controls.Add(player.imagePlayer);
             this.player.imagePlayer.Show();
+            AutoScroll = true;
+            SetAutoScrollMargin(250,250);
         }
     }
 }
