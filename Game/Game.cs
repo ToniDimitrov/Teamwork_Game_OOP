@@ -40,6 +40,8 @@ namespace Game
             {
                 this.player.Move(movementLength, this.UnderMapWithInpassableAreas);
             }
+
+            ScrollControlIntoView(this.player.imagePlayer);
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
