@@ -73,7 +73,7 @@ namespace Game.Models.Heroes
 
         private bool ValidateMove(PictureBox pictBox, Point nextPoint)
         {
-            return (((Bitmap)pictBox.Image).GetPixel(nextPoint.X, nextPoint.Y) !=
+            return (((Bitmap)pictBox.Image).GetPixel(nextPoint.X - pictBox.Left, nextPoint.Y - pictBox.Top) !=
                     ColorTranslator.FromHtml("#000000"));
         }
     }
