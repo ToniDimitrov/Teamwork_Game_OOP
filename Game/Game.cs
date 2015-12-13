@@ -41,7 +41,15 @@ namespace Game
                 this.player.Move(movementLength, this.UnderMapWithInpassableAreas);
             }
 
-            ScrollControlIntoView(this.player.imagePlayer);
+            if (this.player.Location.Y + this.player.imagePlayer.Size.Height + this.AutoScrollMargin.Height <
+                this.Map.Height)
+            {
+                if (this.player.Location.X + this.player.imagePlayer.Size.Width + this.AutoScrollMargin.Width <
+                    this.Map.Width)
+                {
+                    ScrollControlIntoView(this.player.imagePlayer);
+                }
+            }
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
