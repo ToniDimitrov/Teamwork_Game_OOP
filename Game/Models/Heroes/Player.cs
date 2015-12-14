@@ -13,23 +13,12 @@ namespace Game.Models.Heroes
         //public bool playerDown = false;
         //public bool playerLeft = false;
         //public bool playerRight = false;
-        public PictureBox imagePlayer;
+        private const string pathImage = "Viking.png";
 
         public Player(string id, Point location, Size objectSize, int health, int attack, int defencePoints,
             List<Item> items) :
-                base(id, location, objectSize, health, attack, defencePoints, items)
+            base(id, location, objectSize, health, attack, defencePoints, items, pathImage)
         {
-            InitImagePlayer();
-        }
-
-        public void InitImagePlayer()
-        {
-            this.imagePlayer = new PictureBox();
-            this.imagePlayer.Image = Image.FromFile("Spartan30-45.jpg");
-            this.imagePlayer.Size = new System.Drawing.Size(this.ObjectSize.Width,this.ObjectSize.Height);
-            this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
-            this.imagePlayer.Enabled = true;
-            this.imagePlayer.Visible = true;
         }
 
         public void AddItem(Item item)
@@ -100,7 +89,7 @@ namespace Game.Models.Heroes
         public void Move(Point destination)
         {
             this.Location = destination;
-            this.imagePlayer.Location = new System.Drawing.Point(destination.X, destination.Y);
+            this.HeroImage.Location = new System.Drawing.Point(destination.X, destination.Y);
         }
     }
 }

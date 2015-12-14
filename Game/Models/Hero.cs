@@ -1,12 +1,18 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 using Game.Interfaces;
 
 namespace Game.Models
 {
     public abstract class Hero : GameObject, IHero
     {
+        public PictureBox HeroImage { get; set; }
+
+        private string pathImage;
+
         protected Hero(string id, Point location, Size objectSize, int health, int attack, int defencePoints,
-            List<Item> inventory)
+            List<Item> inventory, string pathImage)
             : base(id, location, objectSize)
         {
             this.HealthPoints = health;
@@ -14,6 +20,21 @@ namespace Game.Models
             this.DefencePoints = defencePoints;
             this.Items = inventory;
             this.IsAlive = true;
+            this.pathImage = pathImage;
+            InitHeroImage();
+        }
+
+        public void InitHeroImage()
+        {
+            this.HeroImage = new PictureBox
+            {
+                Image = Image.FromFile(this.pathImage),
+                Size = new System.Drawing.Size(this.ObjectSize.Width, this.ObjectSize.Height),
+                Location = new System.Drawing.Point(this.Location.X, this.Location.Y),
+                Enabled = true,
+                Visible = true,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
         }
 
         public int HealthPoints { get; set; }
@@ -38,4 +59,4 @@ namespace Game.Models
             this.HealthPoints += i.HealthEffect;
         }
     }
-}
+}   

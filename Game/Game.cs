@@ -31,7 +31,7 @@ namespace Game
                 if (ValidateMove(nextStep))
                 {
                     this.player.Move(nextStep);
-                    ScrollControlIntoView(this.player.imagePlayer);
+                    ScrollControlIntoView(this.player.HeroImage);
                 }
             }
 
@@ -108,8 +108,8 @@ namespace Game
 
         private void Game_Load(object sender, EventArgs e)
         {
-            this.Map.Controls.Add(player.imagePlayer);
-            this.player.imagePlayer.Show();
+            this.Map.Controls.Add(player.HeroImage);
+            this.player.HeroImage.Show();
             AutoScroll = true;
             SetAutoScrollMargin(250,250);
         }
@@ -129,5 +129,7 @@ namespace Game
                    (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
                    (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color);
         }
+
+
     }
 }
