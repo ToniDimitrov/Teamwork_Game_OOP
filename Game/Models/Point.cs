@@ -18,7 +18,7 @@ namespace Game.Models
             get { return x; }
             set
             {
-                if (value < 0)
+                if (value < -1)
                 {
                     throw new ArgumentOutOfRangeException("The x coordinate must be within the screen");
                 }
@@ -31,7 +31,7 @@ namespace Game.Models
             get { return y; }
             set
             {
-                if (value < 0)
+                if (value < -1)
                 {
                     throw new ArgumentOutOfRangeException("The y coordinate must be within the screen");
                 }

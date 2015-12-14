@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Game.Models;
 
 namespace Game.Interfaces
 {
     interface IMove
     {
-        void Move(int movementLenght, PictureBox pictBox);
+        void Move(Point destination);
     }
 }
