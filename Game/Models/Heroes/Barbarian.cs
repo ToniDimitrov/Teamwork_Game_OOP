@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Forms;
-using Game.Models;
 
 namespace Game.Models.Heroes
 {

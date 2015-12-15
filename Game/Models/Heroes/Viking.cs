@@ -10,8 +10,8 @@ namespace Game.Models.Heroes
         private const int vikingDefence = 18;
         private const string pathImage = "Viking.png";
 
-        protected Viking(string id, Point location, Size objectSize, List<Item> items) :
-            base(id, location, objectSize, vikingHealth, vikingAttack, vikingDefence, items, pathImage)
+        protected Viking(string id, Point location, Size objectSize, List<Item> items) 
+            : base(id, location, objectSize, vikingHealth, vikingAttack, vikingDefence, items, pathImage)
         {
         }
     }

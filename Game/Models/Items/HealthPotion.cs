@@ -7,11 +7,11 @@ namespace Game.Models.Items
         private const int healthPotionAttackEffect = 0;
         private const int healthPotionDefenceEffect = 0;
         private const int healthPotionHealthEffect = 40;
-
+        private const string PathImage = "../../Resources/Max_health_potion.png";
+        
         public HealthPotion(string id, Point location, Size objectSize)
-            : base(
-                id, location, objectSize, healthPotionAttackEffect, healthPotionDefenceEffect,
-                healthPotionHealthEffect)
+            : base(id, location, objectSize, healthPotionAttackEffect, healthPotionDefenceEffect,
+                healthPotionHealthEffect,PathImage)
         {
         }
     }

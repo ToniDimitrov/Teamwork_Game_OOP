@@ -10,8 +10,8 @@ namespace Game.Models.Heroes
         private const int spartanDefence = 35;
         private const string pathImage = "Spartan.png";
 
-        protected Spartan(string id, Point location, Size objectSize, List<Item> items) :
-            base(id, location, objectSize, spartanHealth, spartanAttack, spartanDefence, items, pathImage)
+        protected Spartan(string id, Point location, Size objectSize, List<Item> items) 
+            : base(id, location, objectSize, spartanHealth, spartanAttack, spartanDefence, items, pathImage)
         {
         }
     }
