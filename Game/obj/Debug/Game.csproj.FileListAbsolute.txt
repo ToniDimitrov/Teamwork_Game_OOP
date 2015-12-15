@@ -53,3 +53,5 @@ C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.Game.resources
 C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.Properties.Resources.resources
 C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 >>>>>>> 4a1cded7c2c912c84ceb7d3f9b6dd05a40484216
+E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
+E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb

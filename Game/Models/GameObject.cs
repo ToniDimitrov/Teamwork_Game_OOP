@@ -6,10 +6,10 @@ namespace Game.Models
     {
         //Мисля че трябва да има properties за тези полета
 
-        protected GameObject(string id, Point Location, Size objectSize)
+        protected GameObject(string id, Point location, Size objectSize)
         {
             this.Id = id;
-            this.Location = Location;
+            this.Location = location;
             this.ObjectSize = objectSize;
         }
 

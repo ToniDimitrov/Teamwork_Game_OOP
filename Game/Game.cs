@@ -16,6 +16,8 @@ namespace Game
         private Player player = new Player("player", new Point(20, 20), new Size(30, 45), 100, 100, 100,
             new List<Item> {new Axe("Axe", new Point(0, 0), new Size(1, 1))});
 
+        Axe axeOne=new Axe("one",new Point(100,100),new Size(30,30));
+
         public Game()
         {
             this.direction = new Point(0, 0);
@@ -112,6 +114,8 @@ namespace Game
             this.player.HeroImage.Show();
             AutoScroll = true;
             SetAutoScrollMargin(250,250);
+
+            this.axeOne.ItemImage.Show();
         }
 
         public bool ValidateMove(Point nextPoint)
