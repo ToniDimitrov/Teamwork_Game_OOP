@@ -34,3 +34,6 @@ C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resou
 C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
 C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
+E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
+E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
+E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
