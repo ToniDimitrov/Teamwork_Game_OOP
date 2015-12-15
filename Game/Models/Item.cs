@@ -38,6 +38,7 @@ namespace Game.Models
                 Visible = true,
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
+            this.ItemImage.BackColor = Color.Transparent;
         }
         public int AttackEffect
         {
