@@ -9,7 +9,7 @@ namespace Game.Models
     {
         public PictureBox HeroImage { get; set; }
 
-        private string pathImage;
+        protected string pathImage;
 
         protected Hero(string id, Point location, Size objectSize, int health, int attack, int defencePoints,
             List<Item> inventory, string pathImage)
@@ -24,6 +24,11 @@ namespace Game.Models
             InitHeroImage();
         }
 
+        protected Hero(string id,Point location,Size objectSize, List<Item> inventory) : base(id,location,objectSize)
+        {
+            this.Items = inventory;
+        }
+
         public void InitHeroImage()
         {
             this.HeroImage = new PictureBox
@@ -35,7 +40,6 @@ namespace Game.Models
                 Visible = true,
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
-            this.HeroImage.BackColor = Color.Transparent;
         }
 
         public int HealthPoints { get; set; }

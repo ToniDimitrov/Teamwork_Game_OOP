@@ -1,57 +1,10 @@
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-c:\users\toni\documents\visual studio 2013\Projects\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
+D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
+D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
-D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-D:\GitHub\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-C:\Users\Skynet\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
-<<<<<<< HEAD
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
-=======
-C:\Users\Pavlinnnn\Desktop\Newww\Game\bin\Debug\Game.exe.config
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.exe
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.pdb
-C:\Users\Pavlinnnn\Desktop\Newww\Game\bin\Debug\Game.exe
-C:\Users\Pavlinnnn\Desktop\Newww\Game\bin\Debug\Game.pdb
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.Game.resources
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.Properties.Resources.resources
-C:\Users\Pavlinnnn\Desktop\Newww\Game\obj\Debug\Game.csproj.GenerateResource.Cache
->>>>>>> 4a1cded7c2c912c84ceb7d3f9b6dd05a40484216
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.Town.resources

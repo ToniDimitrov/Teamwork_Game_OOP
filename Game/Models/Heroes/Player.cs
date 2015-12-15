@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using Game.Interfaces;
 
 namespace Game.Models.Heroes
@@ -9,16 +10,39 @@ namespace Game.Models.Heroes
     public class Player : Hero, IPlayer
     {
         private const int stepLength = 2;
-        //public bool playerUp = false;
-        //public bool playerDown = false;
-        //public bool playerLeft = false;
-        //public bool playerRight = false;
-        private const string pathImage = "Viking.png";
+        public PlayerRace Race { get; set; }
 
-        public Player(string id, Point location, Size objectSize, int health, int attack, int defencePoints,
-            List<Item> items) :
-            base(id, location, objectSize, health, attack, defencePoints, items, pathImage)
+        public Player(string id, Point location, Size objectSize,
+            List<Item> items, PlayerRace playerRace): base(id,location,objectSize,items)
         {
+            this.Race = playerRace;
+            SetCharachteristics();
+            this.InitHeroImage();
+        }
+
+        private void SetCharachteristics()
+        {
+            switch (this.Race)
+            {
+                case PlayerRace.Barbarian:
+                    this.HealthPoints = 125;
+                    this.AttackPoints = 30;
+                    this.DefencePoints = 25;
+                    this.pathImage = "Barbarian.png";
+                    break;
+                case PlayerRace.Spartan:
+                    this.HealthPoints = 110;
+                    this.AttackPoints = 25;
+                    this.DefencePoints = 35;
+                    this.pathImage = "Spartan.png";
+                    break;
+                case PlayerRace.Viking:
+                    this.HealthPoints = 120;
+                    this.AttackPoints = 30;
+                    this.DefencePoints = 18;
+                    this.pathImage = "Viking.png";
+                    break;
+            }
         }
 
         public void AddItem(Item item)
@@ -30,55 +54,6 @@ namespace Game.Models.Heroes
         {
             this.Items.Remove(item);
         }
-
-
-
-        //public void Move(int movementLenght, PictureBox pictBox)
-        //{
-        //    Point locationBeforeMovement = new Point(this.Location.X,this.Location.Y);
-        //    Point nextPoint = new Point(this.Location.X, this.Location.Y);
-
-        //    if (playerDown)
-        //    {
-        //        nextPoint = new Point(this.Location.X, this.Location.Y + movementLenght);
-        //    }
-        //    else if (playerUp)
-        //    {
-        //        nextPoint = new Point(this.Location.X, this.Location.Y - movementLenght);
-        //    }
-        //    else if (playerLeft)
-        //    {
-        //        nextPoint = new Point(this.Location.X - movementLenght, this.Location.Y);
-        //    }
-        //    else if (playerRight)
-        //    {
-        //        nextPoint = new Point(this.Location.X + movementLenght, this.Location.Y);
-        //    }
-
-        //    if (ValidateMove(pictBox, nextPoint))
-        //    {
-        //        this.Location = nextPoint;
-        //    }
-        //    else this.Location = locationBeforeMovement;
-
-        //    this.imagePlayer.Location = new System.Drawing.Point(this.Location.X,this.Location.Y);
-        //}
-
-        //public bool ValidateMove(PictureBox pictBox, Point nextPoint)
-        //{
-        //    Point topLeftVertex = new Point(nextPoint.X,nextPoint.Y);
-        //    Point topRightVertex = new Point(nextPoint.X + this.ObjectSize.Width, nextPoint.Y);
-        //    Point bottomLeftVertex = new Point(nextPoint.X,nextPoint.Y + this.ObjectSize.Height);
-        //    Point bottomRightVertex= new Point(nextPoint.X+this.ObjectSize.Width,nextPoint.Y+this.ObjectSize.Height);
-
-        //    Color color = ColorTranslator.FromHtml("#000000");
-        //    Bitmap image = (Bitmap) pictBox.Image;
-
-        //    return (image.GetPixel(topLeftVertex.X, topLeftVertex.Y) != color) &&
-        //           (image.GetPixel(topRightVertex.X, topRightVertex.Y) != color) &&
-        //           (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
-        //           (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color);
-        //}
 
         public Point NextStep (Point direction)
         {

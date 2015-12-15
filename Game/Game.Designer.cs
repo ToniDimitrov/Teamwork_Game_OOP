@@ -31,6 +31,7 @@ namespace Game
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.timerMovement = new System.Windows.Forms.Timer(this.components);
             this.Map = new System.Windows.Forms.PictureBox();
             this.UnderMapWithInpassableAreas = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,7 @@ namespace Game
             // 
             // Map
             // 
-            this.Map.Image = global::Game.Properties.Resources.map1;
+            this.Map.Image = ((System.Drawing.Image)(resources.GetObject("Map.Image")));
             this.Map.Location = new System.Drawing.Point(0, 0);
             this.Map.Name = "Map";
             this.Map.Size = new System.Drawing.Size(2048, 2039);
@@ -56,7 +57,7 @@ namespace Game
             // 
             // UnderMapWithInpassableAreas
             // 
-            this.UnderMapWithInpassableAreas.Image = global::Game.Properties.Resources.UnderMap;
+            this.UnderMapWithInpassableAreas.Image = ((System.Drawing.Image)(resources.GetObject("UnderMapWithInpassableAreas.Image")));
             this.UnderMapWithInpassableAreas.Location = new System.Drawing.Point(0, 0);
             this.UnderMapWithInpassableAreas.Name = "UnderMapWithInpassableAreas";
             this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2048, 2039);
@@ -70,8 +71,8 @@ namespace Game
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(982, 606);
-            this.Controls.Add(this.Map);
             this.Controls.Add(this.UnderMapWithInpassableAreas);
+            this.Controls.Add(this.Map);
             this.DoubleBuffered = true;
             this.Name = "Game";
             this.Text = " ";
