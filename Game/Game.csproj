@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreatePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePlayer.designer.cs">
+      <DependentUpon>CreatePlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IMove.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\GameObject.cs" />
     <Compile Include="Models\Hero.cs" />
@@ -83,8 +95,14 @@
     <Compile Include="Town.Designer.cs">
       <DependentUpon>Town.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreatePlayer.resx">
+      <DependentUpon>CreatePlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +138,7 @@
     <Content Include="Resources\hylian_shield.png" />
     <Content Include="Resources\Max_health_potion.png" />
     <Content Include="Resources\Sol_Spear.png" />
+    <None Include="Resources\UnderMapTowns.jpg" />
     <Content Include="Resources\Vampire_One-Handed_Axe.png" />
     <None Include="Resources\UnderMap1_Compressed.jpg" />
     <None Include="Resources\UnderMap1.jpg" />

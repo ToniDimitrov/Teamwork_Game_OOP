@@ -12,8 +12,8 @@ namespace Game.Models.Heroes
         private const int stepLength = 2;
         public PlayerRace Race { get; set; }
 
-        public Player(string id, Point location, Size objectSize,
-            List<Item> items, PlayerRace playerRace): base(id,location,objectSize,items)
+        public Player(string id, Point location, Size objectSize, List<Item> items, PlayerRace playerRace)
+            : base(id,location,objectSize,items)
         {
             this.Race = playerRace;
             SetCharachteristics();

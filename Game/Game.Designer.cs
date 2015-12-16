@@ -57,10 +57,10 @@ namespace Game
             // 
             // UnderMapWithInpassableAreas
             // 
-            this.UnderMapWithInpassableAreas.Image = ((System.Drawing.Image)(resources.GetObject("UnderMapWithInpassableAreas.Image")));
+            this.UnderMapWithInpassableAreas.Image = global::Game.Properties.Resources.UnderMapTowns;
             this.UnderMapWithInpassableAreas.Location = new System.Drawing.Point(0, 0);
             this.UnderMapWithInpassableAreas.Name = "UnderMapWithInpassableAreas";
-            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2048, 2039);
+            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2548, 2539);
             this.UnderMapWithInpassableAreas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UnderMapWithInpassableAreas.TabIndex = 1;
             this.UnderMapWithInpassableAreas.TabStop = false;
@@ -70,7 +70,7 @@ namespace Game
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(982, 606);
+            this.ClientSize = new System.Drawing.Size(999, 623);
             this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.Controls.Add(this.Map);
             this.DoubleBuffered = true;

@@ -40,6 +40,7 @@ namespace Game.Models
                 Visible = true,
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
+            this.HeroImage.BackColor = Color.Transparent;
         }
 
         public int HealthPoints { get; set; }
