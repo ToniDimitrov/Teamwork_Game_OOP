@@ -120,7 +120,7 @@ namespace Game
 
         private void InitTowns()
         {
-            this.towns = new List<Town>
+            List<Town> townsList= new List<Town>
             {
                 new Town("Town Player", new Point(226, 187), new Size(117, 69), this.player, true),
                 new Town("Town Enemy 1", new Point(674, 691), new Size(93, 39), this.enemies[0], false),
@@ -129,7 +129,7 @@ namespace Game
                 new Town("Town Enemy 4", new Point(1739, 1666), new Size(84, 70), this.enemies[3], false),
                 new Town("Town Enemy 5", new Point(1066, 1651), new Size(117, 69), this.enemies[4], false)
             };
-
+            this.towns.AddRange(townsList);
         }
 
         private void InitEnemies()
