@@ -19,8 +19,8 @@ namespace Game
         public Point direction;
         private Point lastPointOutOfTown=new Point(320,370);
 
-        private List<Town> towns;
-        private List<Hero> enemies;
+        private List<Town> towns = new List<Town>();
+        private List<Hero> enemies = new List<Hero>();
         Axe axeOne = new Axe("one",new Point(100,100),new Size(30,30));
 
         public Game()
@@ -100,8 +100,6 @@ namespace Game
 
         private void Game_Load(object sender, EventArgs e)
         {
-            this.enemies = new List<Hero>();
-            this.towns = new List<Town>();
             Init();
         }
 
