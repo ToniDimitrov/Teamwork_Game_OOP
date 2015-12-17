@@ -20,3 +20,5 @@ C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.Town.resources
 C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.MainMenu.resources
 C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.CreatePlayer.resources
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.CreatePlayer.resources
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.MainMenu.resources

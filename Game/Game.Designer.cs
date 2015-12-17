@@ -50,17 +50,17 @@ namespace Game
             this.Map.Image = ((System.Drawing.Image)(resources.GetObject("Map.Image")));
             this.Map.Location = new System.Drawing.Point(0, 0);
             this.Map.Name = "Map";
-            this.Map.Size = new System.Drawing.Size(2048, 2039);
+            this.Map.Size = new System.Drawing.Size(2048, 1961);
             this.Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Map.TabIndex = 0;
             this.Map.TabStop = false;
             // 
             // UnderMapWithInpassableAreas
             // 
-            this.UnderMapWithInpassableAreas.Image = global::Game.Properties.Resources.UnderMapTowns;
+            this.UnderMapWithInpassableAreas.Image = ((System.Drawing.Image)(resources.GetObject("UnderMapWithInpassableAreas.Image")));
             this.UnderMapWithInpassableAreas.Location = new System.Drawing.Point(0, 0);
             this.UnderMapWithInpassableAreas.Name = "UnderMapWithInpassableAreas";
-            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2548, 2539);
+            this.UnderMapWithInpassableAreas.Size = new System.Drawing.Size(2048, 1961);
             this.UnderMapWithInpassableAreas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UnderMapWithInpassableAreas.TabIndex = 1;
             this.UnderMapWithInpassableAreas.TabStop = false;

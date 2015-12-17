@@ -27,7 +27,7 @@ namespace Game
         public void CreatePlayer(string playerName, string playerType)
         {
             PlayerRace type = (PlayerRace)Enum.Parse(typeof(PlayerRace), playerType);
-            this.player = new Player("player", new Point(320, 370), new Size(30, 45),new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) },type);
+            this.player = new Player("player", new Point(233, 277), new Size(30, 45),new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) },type);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -111,7 +111,7 @@ namespace Game
             Point bottomLeftVertex = new Point(nextPoint.X, nextPoint.Y + this.player.ObjectSize.Height);
             Point bottomRightVertex = new Point(nextPoint.X + this.player.ObjectSize.Width, nextPoint.Y + this.player.ObjectSize.Height);
 
-            Color TownColor= ColorTranslator.FromHtml("#8521F5");
+            Color TownColor = ColorTranslator.FromHtml("#7F00FF");
             Bitmap image = (Bitmap)this.UnderMapWithInpassableAreas.Image;
 
             if((image.GetPixel(topLeftVertex.X, topLeftVertex.Y) != TownColor) &&
@@ -122,9 +122,9 @@ namespace Game
                 lastPointOutOfTown = nextPoint;
             }
 
-            return (image.GetPixel(topLeftVertex.X, topLeftVertex.Y) == TownColor) &&
-                   (image.GetPixel(topRightVertex.X, topRightVertex.Y) == TownColor) &&
-                   (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) == TownColor) &&
+            return (image.GetPixel(topLeftVertex.X, topLeftVertex.Y) == TownColor) ||
+                   (image.GetPixel(topRightVertex.X, topRightVertex.Y) == TownColor) ||
+                   (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) == TownColor) ||
                    (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) == TownColor);
         }
 
