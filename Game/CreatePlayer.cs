@@ -13,9 +13,16 @@ namespace Game
 {
     public partial class CreatePlayer : Form
     {
+        private Image SpartanImage;
+        private Image VikingImage;
+        private Image BarbarianImage;
+
         public CreatePlayer()
         {
             InitializeComponent();
+            SpartanImage = SpartanButton.BackgroundImage;
+            VikingImage = VikingButton.BackgroundImage;
+            BarbarianImage = BarbarianButton.BackgroundImage;
         }
         public MainMenu Sender { get; set; }
 
@@ -67,6 +74,102 @@ namespace Game
         {
             this.Sender.Show();
             this.Hide();
+        }
+
+        private void SpartanButton_MouseEnter(object sender, EventArgs e)
+        {
+            SpartanImage = SpartanButton.BackgroundImage;
+
+            string pathImage = "Buttons/SpartanButton3.png";
+            SpartanButton.BackgroundImage=Image.FromFile(pathImage);
+        }
+
+        private void SpartanButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (SpartanButton.Checked)
+            {
+                SpartanButton.BackgroundImage=Image.FromFile("Buttons/SpartanButton.png");
+            }
+            else
+            {
+                SpartanButton.BackgroundImage = SpartanImage;
+            }
+        }
+
+        private void BarbarianButton_MouseEnter(object sender, EventArgs e)
+        {
+            BarbarianImage = BarbarianButton.BackgroundImage;
+
+            string pathImage = "Buttons/BarbarianButton3.png";
+            BarbarianButton.BackgroundImage = Image.FromFile(pathImage);
+        }
+
+        private void BarbarianButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (BarbarianButton.Checked)
+            {
+                BarbarianButton.BackgroundImage = Image.FromFile("Buttons/BarbarianButton.png");
+            }
+            else
+            {
+                BarbarianButton.BackgroundImage = BarbarianImage;
+            }
+        }
+
+        private void VikingButton_MouseEnter(object sender, EventArgs e)
+        {
+            VikingImage = VikingButton.BackgroundImage;
+
+            string pathImage = "Buttons/VikingButton3.png";
+            VikingButton.BackgroundImage = Image.FromFile(pathImage);
+        }
+
+        private void VikingButton_MouseLeave(object sender, EventArgs e)
+        {
+            if (VikingButton.Checked)
+            {
+                VikingButton.BackgroundImage = Image.FromFile("Buttons/VikingButton.png");
+            }
+            else
+            {
+                VikingButton.BackgroundImage = VikingImage;
+            }
+        }
+
+        private void SpartanButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            string pathImage1 = "Buttons/BarbarianButton2.png";
+            string pathImage2 = "Buttons/VikingButton2.png";
+
+            string pathImage = "Buttons/SpartanButton.png";
+            SpartanButton.BackgroundImage = Image.FromFile(pathImage);
+
+            BarbarianButton.BackgroundImage = Image.FromFile(pathImage1);
+            VikingButton.BackgroundImage = Image.FromFile(pathImage2);
+        }
+
+        private void VikingButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            string pathImage1 = "Buttons/BarbarianButton2.png";
+            string pathImage2 = "Buttons/SpartanButton2.png";
+
+            string pathImage = "Buttons/VikingButton.png";
+            VikingButton.BackgroundImage = Image.FromFile(pathImage);
+
+            BarbarianButton.BackgroundImage = Image.FromFile(pathImage1);
+            SpartanButton.BackgroundImage = Image.FromFile(pathImage2);
+        }
+
+        private void BarbarianButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            string pathImage1 = "Buttons/VikingButton2.png";
+            string pathImage2 = "Buttons/SpartanButton2.png";
+
+            string pathImage = "Buttons/BarbarianButton.png";
+            BarbarianButton.BackgroundImage = Image.FromFile(pathImage);
+
+            VikingButton.BackgroundImage = Image.FromFile(pathImage1);
+            SpartanButton.BackgroundImage = Image.FromFile(pathImage2);
         }
     }
 }

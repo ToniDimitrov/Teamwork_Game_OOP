@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePlayer));
             this.Title = new System.Windows.Forms.Label();
             this.BackButton = new System.Windows.Forms.Button();
             this.StartGameButton = new System.Windows.Forms.Button();
@@ -38,12 +37,9 @@
             this.LblChooseType = new System.Windows.Forms.Label();
             this.GetTypeTable = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.BarbarianButton = new System.Windows.Forms.RadioButton();
             this.SpartanButton = new System.Windows.Forms.RadioButton();
             this.VikingButton = new System.Windows.Forms.RadioButton();
-            this.BarbarianButton = new System.Windows.Forms.RadioButton();
-            this.NameSpartan = new System.Windows.Forms.Label();
-            this.NameBarbarian = new System.Windows.Forms.Label();
-            this.NameViking = new System.Windows.Forms.Label();
             this.GetNameTable.SuspendLayout();
             this.GetTypeTable.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -55,7 +51,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Title.AutoSize = true;
+            this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.Cursor = System.Windows.Forms.Cursors.Default;
             this.Title.Font = new System.Drawing.Font("Adobe Hebrew", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Image = global::Game.Properties.Resources.BfnUa;
+            this.Title.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Title.Location = new System.Drawing.Point(294, 9);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(216, 34);
@@ -64,29 +64,40 @@
             // 
             // BackButton
             // 
+            this.BackButton.BackColor = System.Drawing.Color.Transparent;
+            this.BackButton.BackgroundImage = global::Game.Properties.Resources.Button_Background;
+            this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(12, 480);
+            this.BackButton.Location = new System.Drawing.Point(12, 514);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(120, 40);
             this.BackButton.TabIndex = 3;
             this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // StartGameButton
             // 
+            this.StartGameButton.BackColor = System.Drawing.Color.Transparent;
+            this.StartGameButton.BackgroundImage = global::Game.Properties.Resources.Button_Background;
+            this.StartGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.StartGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartGameButton.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartGameButton.Location = new System.Drawing.Point(652, 480);
+            this.StartGameButton.Location = new System.Drawing.Point(652, 514);
             this.StartGameButton.Name = "StartGameButton";
             this.StartGameButton.Size = new System.Drawing.Size(120, 40);
             this.StartGameButton.TabIndex = 4;
             this.StartGameButton.Text = "Start Game";
-            this.StartGameButton.UseVisualStyleBackColor = true;
+            this.StartGameButton.UseVisualStyleBackColor = false;
             this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
             // 
             // GetNameTable
             // 
             this.GetNameTable.AutoScroll = true;
+            this.GetNameTable.BackColor = System.Drawing.Color.Transparent;
+            this.GetNameTable.BackgroundImage = global::Game.Properties.Resources.BfnUa;
             this.GetNameTable.ColumnCount = 1;
             this.GetNameTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GetNameTable.Controls.Add(this.LblHeroName, 0, 0);
@@ -124,7 +135,7 @@
             this.LblChooseType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblChooseType.AutoSize = true;
             this.LblChooseType.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblChooseType.Location = new System.Drawing.Point(226, 2);
+            this.LblChooseType.Location = new System.Drawing.Point(226, 4);
             this.LblChooseType.Name = "LblChooseType";
             this.LblChooseType.Size = new System.Drawing.Size(188, 26);
             this.LblChooseType.TabIndex = 0;
@@ -132,116 +143,108 @@
             // 
             // GetTypeTable
             // 
+            this.GetTypeTable.BackColor = System.Drawing.Color.Transparent;
+            this.GetTypeTable.BackgroundImage = global::Game.Properties.Resources.BfnUa;
+            this.GetTypeTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GetTypeTable.ColumnCount = 1;
-            this.GetTypeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.GetTypeTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.GetTypeTable.Controls.Add(this.LblChooseType, 0, 0);
             this.GetTypeTable.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.GetTypeTable.Location = new System.Drawing.Point(82, 153);
             this.GetTypeTable.Name = "GetTypeTable";
             this.GetTypeTable.RowCount = 2;
-            this.GetTypeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GetTypeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.GetTypeTable.Size = new System.Drawing.Size(641, 247);
+            this.GetTypeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.GetTypeTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.GetTypeTable.Size = new System.Drawing.Size(641, 355);
             this.GetTypeTable.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanel1.Controls.Add(this.BarbarianButton);
             this.flowLayoutPanel1.Controls.Add(this.SpartanButton);
             this.flowLayoutPanel1.Controls.Add(this.VikingButton);
-            this.flowLayoutPanel1.Controls.Add(this.BarbarianButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 38);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(634, 210);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(635, 314);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // SpartanButton
-            // 
-            this.SpartanButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SpartanButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.SpartanButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SpartanButton.BackgroundImage")));
-            this.SpartanButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SpartanButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
-            this.SpartanButton.FlatAppearance.BorderSize = 5;
-            this.SpartanButton.Location = new System.Drawing.Point(3, 3);
-            this.SpartanButton.Name = "SpartanButton";
-            this.SpartanButton.Size = new System.Drawing.Size(203, 207);
-            this.SpartanButton.TabIndex = 1;
-            this.SpartanButton.TabStop = true;
-            this.SpartanButton.UseVisualStyleBackColor = true;
-            // 
-            // VikingButton
-            // 
-            this.VikingButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.VikingButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.VikingButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VikingButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
-            this.VikingButton.FlatAppearance.BorderSize = 5;
-            this.VikingButton.Location = new System.Drawing.Point(212, 3);
-            this.VikingButton.Name = "VikingButton";
-            this.VikingButton.Size = new System.Drawing.Size(203, 207);
-            this.VikingButton.TabIndex = 2;
-            this.VikingButton.TabStop = true;
-            this.VikingButton.UseVisualStyleBackColor = true;
             // 
             // BarbarianButton
             // 
-            this.BarbarianButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BarbarianButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BarbarianButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.BarbarianButton.BackgroundImage = global::Game.Properties.Resources.BarbarianButton;
+            this.BarbarianButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BarbarianButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BarbarianButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
-            this.BarbarianButton.FlatAppearance.BorderSize = 5;
-            this.BarbarianButton.Location = new System.Drawing.Point(421, 3);
+            this.BarbarianButton.FlatAppearance.BorderSize = 0;
+            this.BarbarianButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BarbarianButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BarbarianButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BarbarianButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BarbarianButton.Location = new System.Drawing.Point(3, 3);
             this.BarbarianButton.Name = "BarbarianButton";
-            this.BarbarianButton.Size = new System.Drawing.Size(203, 207);
+            this.BarbarianButton.Size = new System.Drawing.Size(203, 262);
             this.BarbarianButton.TabIndex = 0;
             this.BarbarianButton.TabStop = true;
             this.BarbarianButton.UseVisualStyleBackColor = true;
+            this.BarbarianButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BarbarianButton_MouseClick);
+            this.BarbarianButton.MouseEnter += new System.EventHandler(this.BarbarianButton_MouseEnter);
+            this.BarbarianButton.MouseLeave += new System.EventHandler(this.BarbarianButton_MouseLeave);
             // 
-            // NameSpartan
+            // SpartanButton
             // 
-            this.NameSpartan.AutoSize = true;
-            this.NameSpartan.Font = new System.Drawing.Font("Viner Hand ITC", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameSpartan.ForeColor = System.Drawing.Color.Black;
-            this.NameSpartan.Location = new System.Drawing.Point(126, 403);
-            this.NameSpartan.Name = "NameSpartan";
-            this.NameSpartan.Size = new System.Drawing.Size(130, 42);
-            this.NameSpartan.TabIndex = 7;
-            this.NameSpartan.Text = "Spartan";
+            this.SpartanButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SpartanButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.SpartanButton.BackgroundImage = global::Game.Properties.Resources.SpartanButton;
+            this.SpartanButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SpartanButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SpartanButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.SpartanButton.FlatAppearance.BorderSize = 0;
+            this.SpartanButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.SpartanButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.SpartanButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.SpartanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpartanButton.Location = new System.Drawing.Point(212, 3);
+            this.SpartanButton.Name = "SpartanButton";
+            this.SpartanButton.Size = new System.Drawing.Size(203, 262);
+            this.SpartanButton.TabIndex = 1;
+            this.SpartanButton.TabStop = true;
+            this.SpartanButton.UseVisualStyleBackColor = true;
+            this.SpartanButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SpartanButton_MouseClick);
+            this.SpartanButton.MouseEnter += new System.EventHandler(this.SpartanButton_MouseEnter);
+            this.SpartanButton.MouseLeave += new System.EventHandler(this.SpartanButton_MouseLeave);
             // 
-            // NameBarbarian
+            // VikingButton
             // 
-            this.NameBarbarian.AutoSize = true;
-            this.NameBarbarian.Font = new System.Drawing.Font("Viner Hand ITC", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameBarbarian.ForeColor = System.Drawing.Color.Black;
-            this.NameBarbarian.Location = new System.Drawing.Point(539, 403);
-            this.NameBarbarian.Name = "NameBarbarian";
-            this.NameBarbarian.Size = new System.Drawing.Size(157, 42);
-            this.NameBarbarian.TabIndex = 8;
-            this.NameBarbarian.Text = "Barbarian";
-            // 
-            // NameViking
-            // 
-            this.NameViking.AutoSize = true;
-            this.NameViking.Font = new System.Drawing.Font("Viner Hand ITC", 19F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameViking.ForeColor = System.Drawing.Color.Black;
-            this.NameViking.Location = new System.Drawing.Point(333, 403);
-            this.NameViking.Name = "NameViking";
-            this.NameViking.Size = new System.Drawing.Size(107, 42);
-            this.NameViking.TabIndex = 9;
-            this.NameViking.Text = "Viking";
+            this.VikingButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VikingButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.VikingButton.BackgroundImage = global::Game.Properties.Resources.VikingButton;
+            this.VikingButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.VikingButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VikingButton.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            this.VikingButton.FlatAppearance.BorderSize = 0;
+            this.VikingButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.VikingButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.VikingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.VikingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VikingButton.Location = new System.Drawing.Point(421, 3);
+            this.VikingButton.Name = "VikingButton";
+            this.VikingButton.Size = new System.Drawing.Size(203, 262);
+            this.VikingButton.TabIndex = 2;
+            this.VikingButton.TabStop = true;
+            this.VikingButton.UseVisualStyleBackColor = true;
+            this.VikingButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.VikingButton_MouseClick);
+            this.VikingButton.MouseEnter += new System.EventHandler(this.VikingButton_MouseEnter);
+            this.VikingButton.MouseLeave += new System.EventHandler(this.VikingButton_MouseLeave);
             // 
             // CreatePlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 532);
-            this.Controls.Add(this.NameViking);
-            this.Controls.Add(this.NameBarbarian);
-            this.Controls.Add(this.NameSpartan);
+            this.BackgroundImage = global::Game.Properties.Resources.BackGround;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(784, 576);
             this.Controls.Add(this.GetTypeTable);
             this.Controls.Add(this.GetNameTable);
             this.Controls.Add(this.StartGameButton);
@@ -273,8 +276,5 @@
         private System.Windows.Forms.RadioButton VikingButton;
         private System.Windows.Forms.RadioButton BarbarianButton;
         private System.Windows.Forms.RadioButton SpartanButton;
-        private System.Windows.Forms.Label NameSpartan;
-        private System.Windows.Forms.Label NameBarbarian;
-        private System.Windows.Forms.Label NameViking;
     }
 }

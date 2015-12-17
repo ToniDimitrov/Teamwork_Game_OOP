@@ -134,11 +134,17 @@
     <None Include="Resources\map.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\VikingButton.png" />
+    <None Include="Resources\BackGround.jpg" />
+    <None Include="Resources\BfnUa.png" />
+    <None Include="Resources\Button Background.png" />
+    <None Include="Resources\BarbarianButton.png" />
     <Content Include="Resources\Dream_Sword.png" />
     <Content Include="Resources\hylian_shield.png" />
     <Content Include="Resources\Max_health_potion.png" />
     <Content Include="Resources\Sol_Spear.png" />
     <None Include="Resources\UnderMapTowns.jpg" />
+    <None Include="Resources\SpartanButton.png" />
     <Content Include="Resources\Vampire_One-Handed_Axe.png" />
     <None Include="Resources\UnderMap1_Compressed.jpg" />
     <None Include="Resources\UnderMap1.jpg" />

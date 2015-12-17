@@ -19,8 +19,8 @@ namespace Game
         public Point direction;
         private Point lastPointOutOfTown=new Point(320,370);
 
-        private List<Town> towns = new List<Town>();
-        private List<Hero> enemies = new List<Hero>();
+        private List<Town> towns;
+        private List<Hero> enemies;
         Axe axeOne = new Axe("one",new Point(100,100),new Size(30,30));
 
         public Game()
@@ -95,11 +95,22 @@ namespace Game
 
         private void Game_KeyUp(object sender, KeyEventArgs e)
         {
-            this.direction = new Point(0, 0);
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                case Keys.Up:
+                    this.direction.Y = 0;
+                    break;
+                default:
+                    this.direction.X = 0;
+                    break;
+            }
         }
 
         private void Game_Load(object sender, EventArgs e)
         {
+            this.enemies = new List<Hero>();
+            this.towns = new List<Town>();
             Init();
         }
 
@@ -118,7 +129,7 @@ namespace Game
 
         private void InitTowns()
         {
-            List<Town> townsList= new List<Town>
+            this.towns = new List<Town>
             {
                 new Town("Town Player", new Point(226, 187), new Size(117, 69), this.player, true),
                 new Town("Town Enemy 1", new Point(674, 691), new Size(93, 39), this.enemies[0], false),
@@ -127,7 +138,7 @@ namespace Game
                 new Town("Town Enemy 4", new Point(1739, 1666), new Size(84, 70), this.enemies[3], false),
                 new Town("Town Enemy 5", new Point(1066, 1651), new Size(117, 69), this.enemies[4], false)
             };
-            this.towns.AddRange(townsList);
+
         }
 
         private void InitEnemies()
@@ -193,8 +204,8 @@ namespace Game
             Color color = ColorTranslator.FromHtml("#000000");
             Bitmap image = (Bitmap)this.UnderMapWithInpassableAreas.Image;
 
-            return ((image.GetPixel(topLeftVertex.X, topLeftVertex.Y) != color)&&
-            (image.GetPixel(topRightVertex.X, topRightVertex.Y) != color) &&
+            return ((image.GetPixel(topLeftVertex.X, topLeftVertex.Y + 15) != color)&&
+            (image.GetPixel(topRightVertex.X, topRightVertex.Y + 15) != color) &&
             (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
             (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color));      
         }
