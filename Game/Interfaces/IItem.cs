@@ -1,6 +1,6 @@
 ﻿namespace Game.Interfaces
 {
-    internal interface IItem
+    public interface IItem
     {
         int AttackEffect { get; set; }
         int DefenceEffect { get; set; }

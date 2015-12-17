@@ -12,9 +12,9 @@ using Game.Models;
 
 namespace Game
 {
-    public partial class Town : Form
+    public partial class TownForm : Form
     {
-        public Town(Timer sendTimer)
+        public TownForm(Timer sendTimer)
         {
             InitializeComponent();
             this.SenderTimer = sendTimer;

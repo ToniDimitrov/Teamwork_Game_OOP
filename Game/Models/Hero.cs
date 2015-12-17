@@ -24,7 +24,8 @@ namespace Game.Models
             InitHeroImage();
         }
 
-        protected Hero(string id,Point location,Size objectSize, List<Item> inventory) : base(id,location,objectSize)
+        protected Hero(string id, Point location, Size objectSize, List<Item> inventory)
+            : base(id, location, objectSize)
         {
             this.Items = inventory;
         }
@@ -38,9 +39,9 @@ namespace Game.Models
                 Location = new System.Drawing.Point(this.Location.X, this.Location.Y),
                 Enabled = true,
                 Visible = true,
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BackColor = Color.Transparent
             };
-            this.HeroImage.BackColor = Color.Transparent;
         }
 
         public int HealthPoints { get; set; }

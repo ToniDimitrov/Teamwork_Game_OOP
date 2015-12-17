@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Game.Interfaces;
 using Game.Models;
 using Game.Models.Heroes;
 using Game.Models.Items;
@@ -13,10 +14,13 @@ namespace Game
 {
     public partial class Game : Form
     {
-        public Point direction;
         public Player player;
+
+        public Point direction;
         private Point lastPointOutOfTown=new Point(320,370);
 
+        private List<Town> towns;
+        private List<Hero> enemies;
         Axe axeOne = new Axe("one",new Point(100,100),new Size(30,30));
 
         public Game()
@@ -64,7 +68,7 @@ namespace Game
 
         private void EnterTown()
         {
-            Town town = new Town(this.timerMovement);
+            TownForm town = new TownForm(this.timerMovement);
             town.Enabled = true;
             town.Visible = true;
             town.Show();
@@ -96,36 +100,89 @@ namespace Game
 
         private void Game_Load(object sender, EventArgs e)
         {
+            this.enemies = new List<Hero>();
+            this.towns = new List<Town>();
+            Init();
+        }
+
+        private void Init()
+        {
+            InitEnemies();
+            InitTowns();
+
             this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
             this.player.HeroImage.Show();
             AutoScroll = true;
-            SetAutoScrollMargin(250,250);
+            SetAutoScrollMargin(250, 250);
 
             this.axeOne.ItemImage.Show();
         }
 
+        private void InitTowns()
+        {
+            this.towns = new List<Town>
+            {
+                new Town("Town Player", new Point(226, 187), new Size(117, 69), this.player, true),
+                new Town("Town Enemy 1", new Point(674, 691), new Size(93, 39), this.enemies[0], false),
+                new Town("Town Enemy 2", new Point(200, 1658), new Size(118, 65), this.enemies[1], false),
+                new Town("Town Enemy 3", new Point(1741, 201), new Size(87, 59), this.enemies[2], false),
+                new Town("Town Enemy 4", new Point(1739, 1666), new Size(84, 70), this.enemies[3], false),
+                new Town("Town Enemy 5", new Point(1066, 1651), new Size(117, 69), this.enemies[4], false)
+            };
+
+        }
+
+        private void InitEnemies()
+        {
+            List<Hero> enemiesList = new List<Hero>
+            {
+                new Spartan("Enemy 1",new Point(674, 691), new Size(161, 153),
+                    new List<Item> {new Sword("Sword Enemy 1", new Point(1, 1), new Size(1, 1))}),
+
+                new Viking("Enemy 2", new Point(200, 1658), new Size(161, 153),
+                    new List<Item> {new Axe("Axe Enemy 2", new Point(1, 1), new Size(1, 1))}),
+
+                new Barbarian("Enemy 3", new Point(1741, 201), new Size(161, 153),
+                    new List<Item>
+                    {
+                        new Axe("Axe 1 Enemy 3", new Point(1741, 201), new Size(1, 1)),
+                        new Axe("Axe 2 Enemy 3", new Point(1741, 201), new Size(1, 1))
+                    }),
+
+                new Viking("Enemy 4", new Point(1739, 1666), new Size(161, 153),
+                    new List<Item>
+                    {
+                        new Axe("Axe Enemy 4", new Point(1739, 1666), new Size(1, 1)),
+                        new Shield("Shield Enemy 4", new Point(1739, 1666), new Size(1, 1))
+                    }),
+
+                new Spartan("Enemy 5", new Point(1066, 1651), new Size(161, 153),
+                    new List<Item>
+                    {
+                        new Spear("Spear Enemy 5", new Point(1066, 1651), new Size(1, 1)),
+                        new Shield("Shield Enemy 5", new Point(1066, 1651), new Size(1, 1))
+                    })
+            };
+            this.enemies.AddRange(enemiesList);
+        }
+
         public bool IsOnTown(Point nextPoint)
         {
-            Point topLeftVertex = new Point(nextPoint.X, nextPoint.Y);
-            Point topRightVertex = new Point(nextPoint.X + this.player.ObjectSize.Width, nextPoint.Y);
-            Point bottomLeftVertex = new Point(nextPoint.X, nextPoint.Y + this.player.ObjectSize.Height);
-            Point bottomRightVertex = new Point(nextPoint.X + this.player.ObjectSize.Width, nextPoint.Y + this.player.ObjectSize.Height);
+            Rectangle playerRectangle = new Rectangle(nextPoint.X, nextPoint.Y,
+                this.player.ObjectSize.Width, this.player.ObjectSize.Height);
 
-            Color TownColor = ColorTranslator.FromHtml("#7F00FF");
-            Bitmap image = (Bitmap)this.UnderMapWithInpassableAreas.Image;
-
-            if((image.GetPixel(topLeftVertex.X, topLeftVertex.Y) != TownColor) &&
-                   (image.GetPixel(topRightVertex.X, topRightVertex.Y) != TownColor) &&
-                   (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != TownColor) &&
-                   (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != TownColor))
+            Rectangle townRectangle = new Rectangle();
+            foreach (var town in towns)
             {
-                lastPointOutOfTown = nextPoint;
+                townRectangle = new Rectangle(town.Location.X,town.Location.Y,town.ObjectSize.Width,town.ObjectSize.Height);
+                if (playerRectangle.IntersectsWith(townRectangle))
+                {
+                    return true;
+                }
             }
 
-            return (image.GetPixel(topLeftVertex.X, topLeftVertex.Y) == TownColor) ||
-                   (image.GetPixel(topRightVertex.X, topRightVertex.Y) == TownColor) ||
-                   (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) == TownColor) ||
-                   (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) == TownColor);
+            lastPointOutOfTown = nextPoint;
+            return false;
         }
 
         public bool ValidateMove(Point nextPoint)

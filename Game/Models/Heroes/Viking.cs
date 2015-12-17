@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Game.Models;
+using Game.Interfaces;
 
 namespace Game.Models.Heroes
 {
@@ -10,7 +10,7 @@ namespace Game.Models.Heroes
         private const int vikingDefence = 18;
         private const string pathToImage = "Viking.png";
 
-        protected Viking(string id, Point location, Size objectSize, List<Item> items) 
+        public Viking(string id, Point location, Size objectSize, List<Item> items)
             : base(id, location, objectSize, vikingHealth, vikingAttack, vikingDefence, items, pathToImage)
         {
         }
