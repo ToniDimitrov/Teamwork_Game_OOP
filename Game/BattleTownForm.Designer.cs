@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BattleTownForm));
             this.pictBoxPlayer = new System.Windows.Forms.PictureBox();
             this.pictBoxEnemy = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -63,6 +64,7 @@
             this.pictBoxPlayer.Location = new System.Drawing.Point(0, 194);
             this.pictBoxPlayer.Name = "pictBoxPlayer";
             this.pictBoxPlayer.Size = new System.Drawing.Size(161, 153);
+            this.pictBoxPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictBoxPlayer.TabIndex = 1;
             this.pictBoxPlayer.TabStop = false;
             // 
@@ -71,14 +73,17 @@
             this.pictBoxEnemy.Location = new System.Drawing.Point(271, 194);
             this.pictBoxEnemy.Name = "pictBoxEnemy";
             this.pictBoxEnemy.Size = new System.Drawing.Size(161, 153);
+            this.pictBoxEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictBoxEnemy.TabIndex = 2;
             this.pictBoxEnemy.TabStop = false;
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(192, 253);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
