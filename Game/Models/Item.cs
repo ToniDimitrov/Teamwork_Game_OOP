@@ -24,7 +24,7 @@ namespace Game.Models
             this.HealthEffect = healthEffect;
             this.pathImage = pathImage;
 
-            InitItemImage();
+            this.InitItemImage();
         }
 
         public void InitItemImage()
@@ -40,6 +40,7 @@ namespace Game.Models
             };
             this.ItemImage.BackColor = Color.Transparent;
         }
+
         public int AttackEffect
         {
             get { return this.attackEffect; }

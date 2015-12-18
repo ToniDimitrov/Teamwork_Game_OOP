@@ -84,7 +84,7 @@
             this.lblPlayer.AutoSize = true;
             this.lblPlayer.Location = new System.Drawing.Point(40, 13);
             this.lblPlayer.Name = "lblPlayer";
-            this.lblPlayer.Size = new System.Drawing.Size(40, 13);
+            this.lblPlayer.Size = new System.Drawing.Size(39, 13);
             this.lblPlayer.TabIndex = 4;
             this.lblPlayer.Text = "Player:";
             // 
@@ -157,7 +157,7 @@
             this.lblEnemy.AutoSize = true;
             this.lblEnemy.Location = new System.Drawing.Point(310, 13);
             this.lblEnemy.Name = "lblEnemy";
-            this.lblEnemy.Size = new System.Drawing.Size(41, 13);
+            this.lblEnemy.Size = new System.Drawing.Size(42, 13);
             this.lblEnemy.TabIndex = 10;
             this.lblEnemy.Text = "Enemy:";
             // 
@@ -166,7 +166,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Defence:";
             // 
@@ -175,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(38, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 17;
             this.label2.Text = "Attack:";
             // 
@@ -184,7 +184,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(38, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Health:";
             // 
@@ -202,7 +202,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(310, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 22;
             this.label5.Text = "Defence:";
             // 
@@ -211,7 +211,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(310, 56);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "Attack:";
             // 
@@ -220,7 +220,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(310, 43);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 20;
             this.label7.Text = "Health:";
             // 
@@ -241,7 +241,7 @@
             this.lblFightInformation.Size = new System.Drawing.Size(181, 23);
             this.lblFightInformation.TabIndex = 23;
             // 
-            // Town
+            // TownForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,8 +268,9 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Name = "Town";
+            this.Name = "TownForm";
             this.Text = "Town";
+            this.Load += new System.EventHandler(this.TownForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

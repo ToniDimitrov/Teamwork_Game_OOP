@@ -53,12 +53,12 @@
             this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Title.Font = new System.Drawing.Font("Adobe Hebrew", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.Image = global::Game.Properties.Resources.BfnUa;
             this.Title.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Title.Location = new System.Drawing.Point(294, 9);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(216, 34);
+            this.Title.Size = new System.Drawing.Size(242, 31);
             this.Title.TabIndex = 0;
             this.Title.Text = "Create Your Hero";
             // 
@@ -69,7 +69,7 @@
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackButton.FlatAppearance.BorderSize = 0;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.Location = new System.Drawing.Point(12, 514);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(120, 40);
@@ -84,7 +84,7 @@
             this.StartGameButton.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.StartGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.StartGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartGameButton.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartGameButton.Location = new System.Drawing.Point(652, 514);
             this.StartGameButton.Name = "StartGameButton";
             this.StartGameButton.Size = new System.Drawing.Size(120, 40);
@@ -114,10 +114,10 @@
             // 
             this.LblHeroName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblHeroName.AutoSize = true;
-            this.LblHeroName.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHeroName.Location = new System.Drawing.Point(81, 0);
+            this.LblHeroName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHeroName.Location = new System.Drawing.Point(71, 0);
             this.LblHeroName.Name = "LblHeroName";
-            this.LblHeroName.Size = new System.Drawing.Size(125, 26);
+            this.LblHeroName.Size = new System.Drawing.Size(146, 25);
             this.LblHeroName.TabIndex = 0;
             this.LblHeroName.Text = "Player Name";
             // 
@@ -134,10 +134,10 @@
             // 
             this.LblChooseType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblChooseType.AutoSize = true;
-            this.LblChooseType.Font = new System.Drawing.Font("Adobe Hebrew", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblChooseType.Location = new System.Drawing.Point(226, 4);
+            this.LblChooseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblChooseType.Location = new System.Drawing.Point(208, 5);
             this.LblChooseType.Name = "LblChooseType";
-            this.LblChooseType.Size = new System.Drawing.Size(188, 26);
+            this.LblChooseType.Size = new System.Drawing.Size(225, 25);
             this.LblChooseType.TabIndex = 0;
             this.LblChooseType.Text = "Choose Player Type";
             // 

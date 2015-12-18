@@ -35,8 +35,10 @@ namespace Game
             this.timerMovement = new System.Windows.Forms.Timer(this.components);
             this.Map = new System.Windows.Forms.PictureBox();
             this.UnderMapWithInpassableAreas = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerMovement
@@ -65,12 +67,25 @@ namespace Game
             this.UnderMapWithInpassableAreas.TabIndex = 1;
             this.UnderMapWithInpassableAreas.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(902, 1612);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 16);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1016, 640);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.Controls.Add(this.Map);
             this.DoubleBuffered = true;
@@ -81,6 +96,7 @@ namespace Game
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,6 +106,7 @@ namespace Game
         private System.Windows.Forms.Timer timerMovement;
         private System.Windows.Forms.PictureBox Map;
         public PictureBox UnderMapWithInpassableAreas;
+        private PictureBox pictureBox1;
     }
 }
 

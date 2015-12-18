@@ -27,5 +27,10 @@ namespace Game
             base.OnClosed(e);
             this.SenderTimer.Start();
         }
+
+        private void TownForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

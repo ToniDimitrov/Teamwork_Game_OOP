@@ -44,5 +44,10 @@ namespace Game
             BluringPicture.Image=Image.FromFile(pathImage);
             timerTicks--;
         }
+
+        private void Options_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,11 +17,11 @@ namespace Game
         public Player player;
 
         public Point direction;
-        private Point lastPointOutOfTown=new Point(320,370);
+        private Point lastPointOutOfTown = new Point(320, 370);
 
         private List<Town> towns;
         private List<Hero> enemies;
-        Axe axeOne = new Axe("one",new Point(100,100),new Size(30,30));
+        private List<Item> items;
 
         public Game()
         {
@@ -31,7 +31,7 @@ namespace Game
         public void CreatePlayer(string playerName, string playerType)
         {
             PlayerRace type = (PlayerRace)Enum.Parse(typeof(PlayerRace), playerType);
-            this.player = new Player("player", new Point(233, 277), new Size(30, 45),new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) },type);
+            this.player = new Player("player", new Point(233, 277), new Size(30, 45), new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) }, type);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -55,7 +55,7 @@ namespace Game
                 player.Move(lastPointOutOfTown);
                 this.timerMovement.Stop();
                 direction.X = 0;
-                direction.Y = 0;              
+                direction.Y = 0;
                 EnterTown();
                 return;
             }
@@ -118,13 +118,28 @@ namespace Game
         {
             InitEnemies();
             InitTowns();
+            //TODO: InitItem
+            //InitItem(); 
 
             this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
             this.player.HeroImage.Show();
             AutoScroll = true;
             SetAutoScrollMargin(250, 250);
 
-            this.axeOne.ItemImage.Show();
+            // this.axeOne.ItemImage.Show();
+        }
+
+        private void InitItem()
+        {
+            List<Item> itemList = new List<Item>
+           {
+               new Axe("Axe 1",new Point(278, 322),new Size(33, 33)),
+               new Sword("Sword 1",new Point(788, 529),new Size(33, 33)),
+               new Shield("Shield 1",new Point(1008, 1150),new Size(33, 33)),
+               new Spear("Spear 1",new Point(902, 1612),new Size(60, 16)),
+               new HealthPotion("HealthPotion 1",new Point(1135, 459),new Size(33, 33))
+           };
+            this.items.AddRange(itemList);
         }
 
         private void InitTowns()
@@ -175,6 +190,11 @@ namespace Game
             this.enemies.AddRange(enemiesList);
         }
 
+        public bool isOnItem()
+        {
+            //TODO: is player on item?
+            return false;
+        }
         public bool IsOnTown(Point nextPoint)
         {
             Rectangle playerRectangle = new Rectangle(nextPoint.X, nextPoint.Y,
@@ -183,7 +203,7 @@ namespace Game
             Rectangle townRectangle = new Rectangle();
             foreach (var town in towns)
             {
-                townRectangle = new Rectangle(town.Location.X,town.Location.Y,town.ObjectSize.Width,town.ObjectSize.Height);
+                townRectangle = new Rectangle(town.Location.X, town.Location.Y, town.ObjectSize.Width, town.ObjectSize.Height);
                 if (playerRectangle.IntersectsWith(townRectangle))
                 {
                     return true;
@@ -204,10 +224,15 @@ namespace Game
             Color color = ColorTranslator.FromHtml("#000000");
             Bitmap image = (Bitmap)this.UnderMapWithInpassableAreas.Image;
 
-            return ((image.GetPixel(topLeftVertex.X, topLeftVertex.Y + 15) != color)&&
+            return ((image.GetPixel(topLeftVertex.X, topLeftVertex.Y + 15) != color) &&
             (image.GetPixel(topRightVertex.X, topRightVertex.Y + 15) != color) &&
             (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
-            (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color));      
+            (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color));
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -85,6 +85,7 @@
             this.Options.TabIndex = 2;
             this.Options.Text = "Options";
             this.Options.UseVisualStyleBackColor = true;
+            this.Options.Click += new System.EventHandler(this.Options_Click);
             // 
             // Exit
             // 
