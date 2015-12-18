@@ -13,11 +13,14 @@ namespace Game.Models.Heroes
         public PlayerRace Race { get; set; }
 
         public Player(string id, Point location, Size objectSize, List<Item> items, PlayerRace playerRace)
-            : base(id,location,objectSize,items)
+            : base(id, location, objectSize, items)
         {
             this.Race = playerRace;
             SetCharachteristics();
+            ApplyInitialItemsEffect();
+
             this.InitHeroImage();
+
         }
 
         private void SetCharachteristics()
@@ -48,23 +51,40 @@ namespace Game.Models.Heroes
         public void AddItem(Item item)
         {
             this.Items.Add(item);
+            this.ApplyItemEffect(item);
         }
 
         public void RemoveItem(Item item)
         {
             this.Items.Remove(item);
+            RemoveItemEffect(item);
         }
 
-        public Point NextStep (Point direction)
+        public Point NextStep(Point direction)
         {
             return new Point(this.Location.X + stepLength * direction.X, this.Location.Y
-                + stepLength * direction.Y); 
+                + stepLength * direction.Y);
         }
 
         public void Move(Point destination)
         {
             this.Location = destination;
             this.HeroImage.Location = new System.Drawing.Point(destination.X, destination.Y);
+        }
+
+        public void ApplyItemEffect(Item item)
+        {
+            this.HealthPoints += item.HealthEffect;
+            this.AttackPoints += item.AttackEffect;
+            this.DefencePoints += item.DefenceEffect;
+        }
+
+        public void RemoveItemEffect(Item item)
+        {
+            this.HealthPoints -= item.HealthEffect;
+            this.AttackPoints -= item.AttackEffect;
+            this.DefencePoints -= item.DefenceEffect;
+
         }
     }
 }

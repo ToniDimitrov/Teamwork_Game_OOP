@@ -50,13 +50,13 @@ namespace Game
         {
             if (this.direction.X == 0 && this.direction.Y == 0) return;
             Point nextStep = this.player.NextStep(direction);
-            if (IsOnTown(nextStep))
+            if (GetTown(nextStep)!=null)
             {
                 player.Move(lastPointOutOfTown);
                 this.timerMovement.Stop();
                 direction.X = 0;
                 direction.Y = 0;
-                EnterTown();
+                EnterTown(GetTown(nextStep));
                 return;
             }
             if (ValidateMove(nextStep))
@@ -66,12 +66,26 @@ namespace Game
             ScrollControlIntoView(this.player.HeroImage);
         }
 
-        private void EnterTown()
+        private void EnterTown(Town town)
         {
-            TownForm town = new TownForm(this.timerMovement);
-            town.Enabled = true;
-            town.Visible = true;
-            town.Show();
+            if (town.IsConquered == false)
+            {
+                BattleTownForm townForm = new BattleTownForm(this.timerMovement, town, this.player)
+                {
+                    Enabled = true,
+                    Visible = true
+                };
+                townForm.Show();
+            }
+            else
+            {
+                ConqueredTownForm townForm = new ConqueredTownForm(this.timerMovement)
+                {
+                    Enabled = true,
+                    Visible = true
+                };
+                townForm.Show();
+            }
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
@@ -195,7 +209,7 @@ namespace Game
             //TODO: is player on item?
             return false;
         }
-        public bool IsOnTown(Point nextPoint)
+        public Town GetTown(Point nextPoint)
         {
             Rectangle playerRectangle = new Rectangle(nextPoint.X, nextPoint.Y,
                 this.player.ObjectSize.Width, this.player.ObjectSize.Height);
@@ -206,12 +220,12 @@ namespace Game
                 townRectangle = new Rectangle(town.Location.X, town.Location.Y, town.ObjectSize.Width, town.ObjectSize.Height);
                 if (playerRectangle.IntersectsWith(townRectangle))
                 {
-                    return true;
+                    return town;
                 }
             }
 
             lastPointOutOfTown = nextPoint;
-            return false;
+            return null;
         }
 
         public bool ValidateMove(Point nextPoint)
@@ -228,11 +242,6 @@ namespace Game
             (image.GetPixel(topRightVertex.X, topRightVertex.Y + 15) != color) &&
             (image.GetPixel(bottomLeftVertex.X, bottomLeftVertex.Y) != color) &&
             (image.GetPixel(bottomRightVertex.X, bottomRightVertex.Y) != color));
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

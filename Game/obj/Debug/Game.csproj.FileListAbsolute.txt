@@ -21,7 +21,6 @@ C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.MainMenu.resources
 C:\Users\Pavlinnnn\Desktop\New folder (5)\Game\obj\Debug\Game.CreatePlayer.resources
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.CreatePlayer.resources
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.MainMenu.resources
-D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.TownForm.resources
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
 C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
@@ -61,3 +60,5 @@ E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OO
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.TownForm.resources
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.ConqueredTownForm.resources
+D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.BattleTownForm.resources

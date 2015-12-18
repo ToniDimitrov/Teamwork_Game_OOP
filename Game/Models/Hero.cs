@@ -21,13 +21,16 @@ namespace Game.Models
             this.Items = inventory;
             this.IsAlive = true;
             this.pathImage = pathImage;
+
             InitHeroImage();
+            ApplyInitialItemsEffect();
         }
 
         protected Hero(string id, Point location, Size objectSize, List<Item> inventory)
             : base(id, location, objectSize)
         {
             this.Items = inventory;
+            this.IsAlive = true;
         }
 
         public void InitHeroImage()
@@ -56,14 +59,21 @@ namespace Game.Models
 
         public void Attack(Hero enemy)
         {
-            enemy.HealthPoints -= enemy.DefencePoints - this.AttackPoints;
+            if (enemy.DefencePoints < this.AttackPoints)
+            {
+                enemy.HealthPoints -= this.AttackPoints - enemy.DefencePoints;
+            }
+            else this.HealthPoints -= enemy.DefencePoints - this.AttackPoints;
         }
 
-        public void ApplyItemEfect(Item i)
+        protected void ApplyInitialItemsEffect()
         {
-            this.AttackPoints += i.AttackEffect;
-            this.DefencePoints += i.DefenceEffect;
-            this.HealthPoints += i.HealthEffect;
+            foreach (var item in Items)
+            {
+                this.HealthPoints += item.HealthEffect;
+                this.AttackPoints += item.AttackEffect;
+                this.DefencePoints += item.DefenceEffect;
+            }
         }
     }
-}   
+}
