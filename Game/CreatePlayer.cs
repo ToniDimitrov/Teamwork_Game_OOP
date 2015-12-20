@@ -171,5 +171,15 @@ namespace Game
             VikingButton.BackgroundImage = Image.FromFile(pathImage1);
             SpartanButton.BackgroundImage = Image.FromFile(pathImage2);
         }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            ((Button)sender).ForeColor = Color.Transparent;
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).ForeColor = Color.Black;
+        }
     }
 }

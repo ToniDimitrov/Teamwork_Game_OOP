@@ -50,17 +50,19 @@
             this.Title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Title.AutoSize = true;
             this.Title.BackColor = System.Drawing.Color.Transparent;
+            this.Title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Title.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Image = global::Game.Properties.Resources.BfnUa;
+            this.Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Title.Font = new System.Drawing.Font("Adobe Devanagari", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.Image = global::Game.Properties.Resources.tumblr_inline_mt4ng7J4wZ1rydp4g;
             this.Title.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.Title.Location = new System.Drawing.Point(294, 9);
+            this.Title.Location = new System.Drawing.Point(230, 9);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(242, 31);
+            this.Title.Size = new System.Drawing.Size(333, 50);
             this.Title.TabIndex = 0;
             this.Title.Text = "Create Your Hero";
+            this.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BackButton
             // 
@@ -68,8 +70,11 @@
             this.BackButton.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackButton.Font = new System.Drawing.Font("Lithos Pro Regular", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackButton.Location = new System.Drawing.Point(12, 514);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(120, 40);
@@ -77,21 +82,30 @@
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.BackButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.BackButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // StartGameButton
             // 
             this.StartGameButton.BackColor = System.Drawing.Color.Transparent;
             this.StartGameButton.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.StartGameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.StartGameButton.FlatAppearance.BorderSize = 0;
+            this.StartGameButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.StartGameButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.StartGameButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.StartGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StartGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGameButton.Font = new System.Drawing.Font("Lithos Pro Regular", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartGameButton.Location = new System.Drawing.Point(652, 514);
             this.StartGameButton.Name = "StartGameButton";
             this.StartGameButton.Size = new System.Drawing.Size(120, 40);
             this.StartGameButton.TabIndex = 4;
             this.StartGameButton.Text = "Start Game";
+            this.StartGameButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.StartGameButton.UseVisualStyleBackColor = false;
             this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
+            this.StartGameButton.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.StartGameButton.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // GetNameTable
             // 
@@ -114,10 +128,10 @@
             // 
             this.LblHeroName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblHeroName.AutoSize = true;
-            this.LblHeroName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblHeroName.Location = new System.Drawing.Point(71, 0);
+            this.LblHeroName.Font = new System.Drawing.Font("Lithos Pro Regular", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHeroName.Location = new System.Drawing.Point(48, 0);
             this.LblHeroName.Name = "LblHeroName";
-            this.LblHeroName.Size = new System.Drawing.Size(146, 25);
+            this.LblHeroName.Size = new System.Drawing.Size(191, 31);
             this.LblHeroName.TabIndex = 0;
             this.LblHeroName.Text = "Player Name";
             // 
@@ -134,10 +148,10 @@
             // 
             this.LblChooseType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblChooseType.AutoSize = true;
-            this.LblChooseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblChooseType.Location = new System.Drawing.Point(208, 5);
+            this.LblChooseType.Font = new System.Drawing.Font("Lithos Pro Regular", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblChooseType.Location = new System.Drawing.Point(178, 2);
             this.LblChooseType.Name = "LblChooseType";
-            this.LblChooseType.Size = new System.Drawing.Size(225, 25);
+            this.LblChooseType.Size = new System.Drawing.Size(284, 31);
             this.LblChooseType.TabIndex = 0;
             this.LblChooseType.Text = "Choose Player Type";
             // 
@@ -258,7 +272,6 @@
             this.GetTypeTable.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

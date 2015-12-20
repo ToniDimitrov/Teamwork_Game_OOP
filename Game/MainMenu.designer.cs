@@ -42,17 +42,20 @@
             // 
             // GameName
             // 
-            this.GameName.AutoSize = true;
+            this.GameName.AutoEllipsis = true;
             this.GameName.BackColor = System.Drawing.Color.Transparent;
             this.GameName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GameName.Font = new System.Drawing.Font("Viner Hand ITC", 35F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameName.ForeColor = System.Drawing.Color.Linen;
-            this.GameName.Image = global::Game.Properties.Resources.BfnUa;
-            this.GameName.Location = new System.Drawing.Point(212, 28);
+            this.GameName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GameName.Font = new System.Drawing.Font("Adobe Devanagari", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameName.ForeColor = System.Drawing.Color.Black;
+            this.GameName.Image = global::Game.Properties.Resources.tumblr_inline_mt4ng7J4wZ1rydp4g;
+            this.GameName.Location = new System.Drawing.Point(182, 42);
             this.GameName.Name = "GameName";
-            this.GameName.Size = new System.Drawing.Size(367, 78);
+            this.GameName.Size = new System.Drawing.Size(432, 77);
             this.GameName.TabIndex = 0;
             this.GameName.Text = "Name goes here";
+            this.GameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GameName.UseCompatibleTextRendering = true;
             // 
             // NewGame
             // 
@@ -60,8 +63,10 @@
             this.NewGame.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.NewGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NewGame.FlatAppearance.BorderSize = 0;
+            this.NewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.NewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.NewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewGame.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewGame.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGame.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.NewGame.Location = new System.Drawing.Point(58, 29);
             this.NewGame.Name = "NewGame";
@@ -70,6 +75,8 @@
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = true;
             this.NewGame.Click += new System.EventHandler(this.NewGame_Click);
+            this.NewGame.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
+            this.NewGame.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             // 
             // Options
             // 
@@ -77,8 +84,10 @@
             this.Options.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.Options.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Options.FlatAppearance.BorderSize = 0;
+            this.Options.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Options.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Options.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Options.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Options.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Options.Location = new System.Drawing.Point(58, 160);
             this.Options.Name = "Options";
             this.Options.Size = new System.Drawing.Size(250, 80);
@@ -86,6 +95,8 @@
             this.Options.Text = "Options";
             this.Options.UseVisualStyleBackColor = true;
             this.Options.Click += new System.EventHandler(this.Options_Click);
+            this.Options.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
+            this.Options.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             // 
             // Exit
             // 
@@ -93,8 +104,10 @@
             this.Exit.BackgroundImage = global::Game.Properties.Resources.Button_Background;
             this.Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Exit.FlatAppearance.BorderSize = 0;
+            this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.Location = new System.Drawing.Point(58, 285);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(250, 80);
@@ -102,6 +115,8 @@
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.Exit.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
+            this.Exit.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             // 
             // BluringTimer
             // 
@@ -141,18 +156,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImage = global::Game.Properties.Resources.BackGround;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 576);
             this.Controls.Add(this.BluringPicture);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.GameName);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "MainMenu";
             this.Text = "Main Menu";
             ((System.ComponentModel.ISupportInitialize)(this.BluringPicture)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

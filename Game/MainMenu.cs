@@ -49,5 +49,15 @@ namespace Game
         {
 
         }
+
+        private void NewGame_MouseEnter(object sender, EventArgs e)
+        {
+            ((Button)sender).ForeColor = Color.Transparent;
+        }
+
+        private void NewGame_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).ForeColor=Color.Black;
+        }
     }
 }

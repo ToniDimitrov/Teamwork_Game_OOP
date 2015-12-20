@@ -143,6 +143,16 @@ namespace Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tumblr_inline_mt4ng7J4wZ1rydp4g {
+            get {
+                object obj = ResourceManager.GetObject("tumblr_inline_mt4ng7J4wZ1rydp4g", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UnderMap {
             get {
                 object obj = ResourceManager.GetObject("UnderMap", resourceCulture);
