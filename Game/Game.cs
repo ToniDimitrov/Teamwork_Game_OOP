@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Timers;
 using System.Windows.Forms;
 using Game.Interfaces;
 using Game.Models;
@@ -14,6 +16,7 @@ namespace Game
 {
     public partial class Game : Form
     {
+        private PictureBox showItemsCountPictureBox;
         public Player player;
 
         public Point direction;
@@ -104,7 +107,26 @@ namespace Game
                 case Keys.Right:
                     this.direction = new Point(1, 0);
                     break;
+                case Keys.I:
+                    showItemsCountPictureBox.Controls[0].Text = string.Format("Items: {0}\nEnemy towns: {1}",
+                        this.player.Items.Count.ToString(), this.towns.Count(t => !t.IsConquered));
+                    showItemsCountPictureBox.Location = new System.Drawing.Point(this.player.Location.X, this.player.Location.Y - 70);
+                    showItemsCountPictureBox.Show();
+
+                    System.Timers.Timer showItemsTimer = new System.Timers.Timer(2000);
+                    showItemsTimer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
+
+                    //set this so that the timer is stopped once the elaplsed event is fired
+                    showItemsTimer.AutoReset = false;
+                    showItemsTimer.Enabled = true;
+                    break;
+
             }
+        }
+
+        private void timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.showItemsCountPictureBox.Hide();
         }
 
         private void Game_KeyUp(object sender, KeyEventArgs e)
@@ -136,9 +158,24 @@ namespace Game
             //InitItem(); 
 
             this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
+
+            this.showItemsCountPictureBox = new PictureBox
+            {
+                Image = Image.FromFile("testShowItemsCount.png"),
+                Size = new System.Drawing.Size(150, 70),
+                Location = new System.Drawing.Point(this.Width / 2, this.Height / 2),
+            };
+            showItemsCountPictureBox.Visible = false;
+            Label itemsCountLabel = new Label { Height = 50 };
+            showItemsCountPictureBox.Controls.Add(itemsCountLabel);
+            showItemsCountPictureBox.Controls.SetChildIndex(itemsCountLabel, 0);
+            this.UnderMapWithInpassableAreas.Controls.Add(showItemsCountPictureBox);
+
             this.player.HeroImage.Show();
             AutoScroll = true;
             SetAutoScrollMargin(250, 250);
+
+
 
             // this.axeOne.ItemImage.Show();
         }
