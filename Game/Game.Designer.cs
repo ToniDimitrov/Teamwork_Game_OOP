@@ -74,6 +74,7 @@ namespace Game
             this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.Controls.Add(this.Map);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Game_Load);
