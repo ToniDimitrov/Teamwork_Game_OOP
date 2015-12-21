@@ -24,21 +24,21 @@ namespace Game.Models.Heroes
             switch (this.Race)
             {
                 case PlayerRace.Barbarian:
-                    this.HealthPoints = 125;
                     this.AttackPoints = 30;
                     this.DefencePoints = 25;
+                    this.HealthPoints = 125;
                     this.pathImage = "Barbarian.png";
                     break;
                 case PlayerRace.Spartan:
-                    this.HealthPoints = 110;
                     this.AttackPoints = 25;
                     this.DefencePoints = 35;
+                    this.HealthPoints = 110;
                     this.pathImage = "Spartan.png";
                     break;
                 case PlayerRace.Viking:
-                    this.HealthPoints = 120;
                     this.AttackPoints = 30;
                     this.DefencePoints = 18;
+                    this.HealthPoints = 120;
                     this.pathImage = "Viking.png";
                     break;
             }
@@ -70,17 +70,16 @@ namespace Game.Models.Heroes
 
         public void ApplyItemEffect(Item item)
         {
-            this.HealthPoints += item.HealthEffect;
             this.AttackPoints += item.AttackEffect;
             this.DefencePoints += item.DefenceEffect;
-        }
+            this.HealthPoints += item.HealthEffect;
+            }
 
         public void RemoveItemEffect(Item item)
         {
-            this.HealthPoints -= item.HealthEffect;
             this.AttackPoints -= item.AttackEffect;
             this.DefencePoints -= item.DefenceEffect;
-
-        }
+            this.HealthPoints -= item.HealthEffect;
+            }
     }
 }

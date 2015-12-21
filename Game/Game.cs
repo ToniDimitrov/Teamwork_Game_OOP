@@ -62,6 +62,10 @@ namespace Game
                 EnterTown(GetTown(nextStep));
                 return;
             }
+            if (IsOnItem(nextStep))
+            {
+                this.player.Move(nextStep);
+            }
             if (ValidateMove(nextStep))
             {
                 this.player.Move(nextStep);
@@ -108,20 +112,30 @@ namespace Game
                     this.direction = new Point(1, 0);
                     break;
                 case Keys.I:
-                    showItemsCountPictureBox.Controls[0].Text = string.Format("Items: {0}\nEnemy towns: {1}",
-                        this.player.Items.Count.ToString(), this.towns.Count(t => !t.IsConquered));
-                    showItemsCountPictureBox.Location = new System.Drawing.Point(this.player.Location.X, this.player.Location.Y - 70);
-                    showItemsCountPictureBox.Show();
-
-                    System.Timers.Timer showItemsTimer = new System.Timers.Timer(2000);
-                    showItemsTimer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
-
-                    //set this so that the timer is stopped once the elaplsed event is fired
-                    showItemsTimer.AutoReset = false;
-                    showItemsTimer.Enabled = true;
+                    Key_I();
                     break;
-
             }
+        }
+
+        private void Key_I()
+        {
+            showItemsCountPictureBox.Controls[0].Text =
+                string.Format("Items: {0}\nEnemy towns: {1}\n--------------\nAttack: {2}\nDefence: {3}\nHealth: {4}",
+                this.player.Items.Count,
+                this.towns.Count(t => !t.IsConquered),
+                this.player.AttackPoints,
+                this.player.DefencePoints,
+                this.player.HealthPoints);
+
+            showItemsCountPictureBox.Location = new System.Drawing.Point(this.player.Location.X, this.player.Location.Y - 70);
+            showItemsCountPictureBox.Show();
+
+            System.Timers.Timer showItemsTimer = new System.Timers.Timer(2000);
+            showItemsTimer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
+
+            //set this so that the timer is stopped once the elaplsed event is fired
+            showItemsTimer.AutoReset = false;
+            showItemsTimer.Enabled = true;
         }
 
         private void timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -162,7 +176,7 @@ namespace Game
             this.showItemsCountPictureBox = new PictureBox
             {
                 Image = Image.FromFile("testShowItemsCount.png"),
-                Size = new System.Drawing.Size(150, 70),
+                Size = new System.Drawing.Size(200, 70),
                 Location = new System.Drawing.Point(this.Width / 2, this.Height / 2),
             };
             showItemsCountPictureBox.Visible = false;
@@ -182,11 +196,15 @@ namespace Game
            {
                new Axe("Axe 1",new Point(190, 350),new Size(33, 33)),
                new Sword("Sword 1",new Point(788, 529),new Size(33, 33)),
+               new Sword("Sword 2",new Point(1654, 1371),new Size(33, 33)),
                new Shield("Shield 1",new Point(1008, 1150),new Size(33, 33)),
+               new Shield("Shield 2",new Point(1357, 1333),new Size(33, 33)),
                new Spear("Spear 1",new Point(902, 1612),new Size(60, 16)),
+               new Spear("Spear 1",new Point(1100, 264),new Size(60, 16)),
                new HealthPotion("HealthPotion 1",new Point(1135, 459),new Size(33, 33)),
-               new HealthPotion("HealthPotion 2",new Point(1135, 459),new Size(33, 33)),
-               new HealthPotion("HealthPotion 3",new Point(1135, 459),new Size(33, 33))
+               new HealthPotion("HealthPotion 2",new Point(629, 450),new Size(33, 33)),
+               new HealthPotion("HealthPotion 3",new Point(744, 1100),new Size(33, 33)),
+               new HealthPotion("HealthPotion 4",new Point(1670, 1538),new Size(33, 33))
            };
             foreach (var item in itemList)
             {
@@ -244,9 +262,22 @@ namespace Game
             this.enemies.AddRange(enemiesList);
         }
 
-        public bool isOnItem()
+        public bool IsOnItem(Point nextPoint)
         {
-            //TODO: is player on item?
+            Rectangle playerRectangle = new Rectangle(nextPoint.X, nextPoint.Y,
+               this.player.ObjectSize.Width, this.player.ObjectSize.Height);
+            Rectangle itemRectangle = new Rectangle();
+
+            foreach (var item in items)
+            {
+                itemRectangle = new Rectangle(item.Location.X, item.Location.Y, item.ObjectSize.Width, item.ObjectSize.Height);
+                if (playerRectangle.IntersectsWith(itemRectangle))
+                {
+                    this.player.AddItem(item);
+                    item.ItemImage.Hide();
+                    return true;
+                }
+            }
             return false;
         }
         public Town GetTown(Point nextPoint)

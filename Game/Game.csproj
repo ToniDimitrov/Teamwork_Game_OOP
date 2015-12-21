@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tumblr_inline_mt4ng7J4wZ1rydp4g.png" />
+    <Content Include="Resources\Vampire_One-Handed_Axe.png" />
     <Content Include="Resources\Vampire_One-Handed_Axe33x33.png" />
     <None Include="Resources\VikingButton.png" />
     <None Include="Resources\BackGround.jpg" />
