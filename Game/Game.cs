@@ -53,7 +53,7 @@ namespace Game
         {
             if (this.direction.X == 0 && this.direction.Y == 0) return;
             Point nextStep = this.player.NextStep(direction);
-            if (GetTown(nextStep)!=null)
+            if (GetTown(nextStep) != null)
             {
                 player.Move(lastPointOutOfTown);
                 this.timerMovement.Stop();
@@ -147,6 +147,7 @@ namespace Game
         {
             this.enemies = new List<Hero>();
             this.towns = new List<Town>();
+            this.items = new List<Item>();
             Init();
         }
 
@@ -154,8 +155,7 @@ namespace Game
         {
             InitEnemies();
             InitTowns();
-            //TODO: InitItem
-            //InitItem(); 
+            InitItem();
 
             this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
 
@@ -174,10 +174,6 @@ namespace Game
             this.player.HeroImage.Show();
             AutoScroll = true;
             SetAutoScrollMargin(250, 250);
-
-
-
-            // this.axeOne.ItemImage.Show();
         }
 
         private void InitItem()
@@ -190,7 +186,12 @@ namespace Game
                new Spear("Spear 1",new Point(902, 1612),new Size(60, 16)),
                new HealthPotion("HealthPotion 1",new Point(1135, 459),new Size(33, 33))
            };
-            this.items.AddRange(itemList);
+            foreach (var item in itemList)
+            {
+                this.UnderMapWithInpassableAreas.Controls.Add(item.ItemImage);
+                item.ItemImage.Show();
+                this.items.Add(item);
+            }
         }
 
         private void InitTowns()
