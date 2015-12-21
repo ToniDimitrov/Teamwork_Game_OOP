@@ -10,19 +10,6 @@ D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.BattleTownForm.resources
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
 D:\GitHub\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.ConqueredTownForm.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.CreatePlayer.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.MainMenu.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.BattleTownForm.resources
-C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
 C:\Users\Pavlinnnn\Desktop\TeamGame\Game\bin\Debug\Game.exe.config
 C:\Users\Pavlinnnn\Desktop\TeamGame\Game\obj\Debug\Game.exe
 C:\Users\Pavlinnnn\Desktop\TeamGame\Game\obj\Debug\Game.pdb
@@ -49,3 +36,16 @@ E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OO
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.BattleTownForm.resources
 E:\SoftUni\1.Fundamental Level\Object-Oriented-Programming\Game\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe.config
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.exe
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\bin\Debug\Game.pdb
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.ConqueredTownForm.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.CreatePlayer.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Game.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.MainMenu.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.BattleTownForm.resources
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.exe
+C:\Users\user23\Documents\Teamwork_Game_OOP\Game\obj\Debug\Game.pdb

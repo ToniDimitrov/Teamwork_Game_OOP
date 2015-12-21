@@ -275,6 +275,7 @@ namespace Game
                 {
                     this.player.AddItem(item);
                     item.ItemImage.Hide();
+                    this.items.Remove(item);
                     return true;
                 }
             }

@@ -88,6 +88,11 @@ namespace Game
             }
             else
             {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                player.SoundLocation = "RageOfBlades.wav";
+                player.Load();
+                player.Play();
+
                 if (this.player.IsAlive && this.town.EnemyHero.IsAlive)
                 {
                     int currentPlayerHealth = 0;
