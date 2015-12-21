@@ -10,8 +10,8 @@ namespace Game.Models.Heroes
         private const int spartanDefence = 35;
         private const string pathToImage = "Spartan.png";
         private const string pathToImage1 = "Spartan1.png";
-        private const string pathToImage2 = "Spartan2.png";
-        private const string pathToImage3 = "Spartan3.png";
+        private const string pathToImage2 = "RevertedSpartan.png";
+        private const string pathToImage3 = "RevertedSpartan1.png";
 
 
         public Spartan(string id, Point location, Size objectSize, List<Item> items)

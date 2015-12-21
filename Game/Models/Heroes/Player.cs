@@ -40,8 +40,8 @@ namespace Game.Models.Heroes
                     this.HealthPoints = 110;
                     this.pathImage = "Spartan.png";
                     this.pathImage1 = "Spartan1.png";
-                    this.pathImage2 = "Spartan2.png";
-                    this.pathImage3 = "Spartan3.png";
+                    this.pathImage2 = "RevertedSpartan.png";
+                    this.pathImage3 = "RevertedSpartan1.png";
 
                     break;
                 case PlayerRace.Viking:
