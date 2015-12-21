@@ -271,12 +271,12 @@ namespace Game
         {
             this.towns = new List<Town>
             {
-                new Town("Town Player", new Point(226, 187), new Size(117, 69), this.player, true),
-                new Town("Town Enemy 1", new Point(674, 691), new Size(93, 39), this.enemies[0], false),
-                new Town("Town Enemy 2", new Point(200, 1658), new Size(118, 65), this.enemies[1], false),
-                new Town("Town Enemy 3", new Point(1741, 201), new Size(87, 59), this.enemies[2], false),
+                new Town("Town Player", new Point(216, 180), new Size(110, 60), this.player, true),
+                new Town("Town Enemy 1", new Point(674, 659), new Size(83, 39), this.enemies[0], false),
+                new Town("Town Enemy 2", new Point(200, 1683), new Size(118, 65), this.enemies[1], false),
+                new Town("Town Enemy 3", new Point(1751, 201), new Size(87, 59), this.enemies[2], false),
                 new Town("Town Enemy 4", new Point(1739, 1666), new Size(84, 70), this.enemies[3], false),
-                new Town("Town Enemy 5", new Point(1066, 1651), new Size(117, 69), this.enemies[4], false)
+                new Town("Town Enemy 5", new Point(1066, 1601), new Size(117, 69), this.enemies[4], false)
             };
 
         }
