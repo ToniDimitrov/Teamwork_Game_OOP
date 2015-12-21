@@ -180,11 +180,13 @@ namespace Game
         {
             List<Item> itemList = new List<Item>
            {
-               new Axe("Axe 1",new Point(278, 322),new Size(33, 33)),
+               new Axe("Axe 1",new Point(190, 350),new Size(33, 33)),
                new Sword("Sword 1",new Point(788, 529),new Size(33, 33)),
                new Shield("Shield 1",new Point(1008, 1150),new Size(33, 33)),
                new Spear("Spear 1",new Point(902, 1612),new Size(60, 16)),
-               new HealthPotion("HealthPotion 1",new Point(1135, 459),new Size(33, 33))
+               new HealthPotion("HealthPotion 1",new Point(1135, 459),new Size(33, 33)),
+               new HealthPotion("HealthPotion 2",new Point(1135, 459),new Size(33, 33)),
+               new HealthPotion("HealthPotion 3",new Point(1135, 459),new Size(33, 33))
            };
             foreach (var item in itemList)
             {
