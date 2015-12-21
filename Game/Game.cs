@@ -26,6 +26,10 @@ namespace Game
         private List<Hero> enemies;
         private List<Item> items;
 
+        private bool isWalkingOnLeft = true;
+        private bool isOnLeftLeg = true;
+        private int stepCounter;
+
         public Game()
         {
             this.direction = new Point(0, 0);
@@ -69,8 +73,46 @@ namespace Game
             if (ValidateMove(nextStep))
             {
                 this.player.Move(nextStep);
+                this.stepCounter++;
+                if (this.stepCounter %10 == 0)
+                {
+                    ImitateAnimation();
+                }
+               
             }
             ScrollControlIntoView(this.player.HeroImage);
+        }
+
+        private void ImitateAnimation()
+        {
+            if (isWalkingOnLeft)
+            {
+                if (isOnLeftLeg)
+                {
+                    this.player.HeroImage.Hide();
+                    this.player.HeroImage1.Show();
+                }
+                else
+                {
+                    this.player.HeroImage.Show();
+                    this.player.HeroImage1.Hide();
+                }
+                isOnLeftLeg = !isOnLeftLeg;
+            }
+            else
+            {
+                if (isOnLeftLeg)
+                {
+                    this.player.HeroImage2.Show();
+                    this.player.HeroImage3.Hide();
+                }
+                else
+                {
+                    this.player.HeroImage2.Hide();
+                    this.player.HeroImage3.Show();
+                }
+                isOnLeftLeg = !isOnLeftLeg;
+            }
         }
 
         private void EnterTown(Town town)
@@ -107,9 +149,13 @@ namespace Game
                     break;
                 case Keys.Left:
                     this.direction = new Point(-1, 0);
+                    this.isWalkingOnLeft = true;
                     break;
                 case Keys.Right:
                     this.direction = new Point(1, 0);
+                    this.isWalkingOnLeft = false;
+                    this.player.HeroImage.Hide();
+                    this.player.HeroImage1.Hide();
                     break;
                 case Keys.I:
                     Key_I();
@@ -172,6 +218,9 @@ namespace Game
             InitItem();
 
             this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
+            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage1);
+            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage2);
+            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage3);
 
             this.showItemsCountPictureBox = new PictureBox
             {
@@ -186,6 +235,10 @@ namespace Game
             this.UnderMapWithInpassableAreas.Controls.Add(showItemsCountPictureBox);
 
             this.player.HeroImage.Show();
+            this.player.HeroImage1.Show();
+            this.player.HeroImage2.Show();
+            this.player.HeroImage3.Show();
+
             AutoScroll = true;
             SetAutoScrollMargin(250, 250);
         }

@@ -28,18 +28,31 @@ namespace Game.Models.Heroes
                     this.DefencePoints = 25;
                     this.HealthPoints = 125;
                     this.pathImage = "Barbarian.png";
+                    this.pathImage1 = "barbarian2.png";
+                    this.pathImage2 = "barbarian1.png";
+                    this.pathImage3 = "Barbarian3.png";
+
+
                     break;
                 case PlayerRace.Spartan:
                     this.AttackPoints = 25;
                     this.DefencePoints = 35;
                     this.HealthPoints = 110;
                     this.pathImage = "Spartan.png";
+                    this.pathImage1 = "Spartan1.png";
+                    this.pathImage2 = "Spartan2.png";
+                    this.pathImage3 = "Spartan3.png";
+
                     break;
                 case PlayerRace.Viking:
                     this.AttackPoints = 30;
                     this.DefencePoints = 18;
                     this.HealthPoints = 120;
-                    this.pathImage = "Viking.png";
+                    this.pathImage = "Viking2.png";
+                    this.pathImage1 = "Viking3.png";
+                    this.pathImage2 = "Viking.png";
+                    this.pathImage3 = "Viking1.png";
+
                     break;
             }
         }
@@ -66,6 +79,10 @@ namespace Game.Models.Heroes
         {
             this.Location = destination;
             this.HeroImage.Location = new System.Drawing.Point(destination.X, destination.Y);
+            this.HeroImage1.Location = new System.Drawing.Point(destination.X, destination.Y);
+            this.HeroImage2.Location = new System.Drawing.Point(destination.X, destination.Y);
+            this.HeroImage3.Location = new System.Drawing.Point(destination.X, destination.Y);
+
         }
 
         public void ApplyItemEffect(Item item)
