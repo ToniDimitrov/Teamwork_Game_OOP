@@ -5,7 +5,7 @@ namespace Game.Interfaces
 {
     public interface ICollect
     {
-        void AddItem(Item item);
+        void AddItem(IItem item);
         void RemoveItem(Item item);
     }
 }

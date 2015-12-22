@@ -8,7 +8,7 @@ using Game.Models;
 
 namespace Game.Interfaces
 {
-    interface IMove
+    public interface IMove
     {
         void Move(Point destination);
     }

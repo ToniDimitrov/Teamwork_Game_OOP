@@ -6,10 +6,10 @@ using Game.Models;
 
 namespace Game.Models
 {
-    public class Town : GameObject
+    public class Town : GameObject, ITown
     {
 
-        public Town(string id, Point location, Size objectSize, Hero enemyHero, bool isConquered)//, string pictureTownPath)
+        public Town(string id, Point location, Size objectSize, IHero enemyHero, bool isConquered)//, string pictureTownPath)
             : base(id, location, objectSize)
         {
             this.EnemyHero = enemyHero;
@@ -33,7 +33,7 @@ namespace Game.Models
         //    };
         //}
 
-        public Hero EnemyHero { get; set; }
+        public IHero EnemyHero { get; set; }
 
         public bool IsConquered { get; set; }
     }

@@ -17,14 +17,14 @@ namespace Game
     public partial class Game : Form
     {
         private PictureBox showItemsCountPictureBox;
-        public Player player;
+        public IPlayer player;
 
         public Point direction;
         private Point lastPointOutOfTown = new Point(320, 370);
 
-        private List<Town> towns;
+        private IList<ITown> towns;
         private List<Hero> enemies;
-        private List<Item> items;
+        private IList<IItem> items;
 
         private bool isWalkingOnLeft = true;
         private bool isOnLeftLeg = true;
@@ -38,7 +38,7 @@ namespace Game
         public void CreatePlayer(string playerName, string playerType)
         {
             PlayerRace type = (PlayerRace)Enum.Parse(typeof(PlayerRace), playerType);
-            this.player = new Player(playerName, new Point(233, 277), new Size(30, 45), new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) }, type);
+            this.player = new Player(playerName, new Point(233, 277), new Size(30, 45), new List<IItem> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) }, type);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -115,7 +115,7 @@ namespace Game
             }
         }
 
-        private void EnterTown(Town town)
+        private void EnterTown(ITown town)
         {
             if (town.IsConquered == false)
             {
@@ -210,8 +210,8 @@ namespace Game
         private void Game_Load(object sender, EventArgs e)
         {
             this.enemies = new List<Hero>();
-            this.towns = new List<Town>();
-            this.items = new List<Item>();
+            this.towns = new List<ITown>();
+            this.items = new List<IItem>();
             Init();
         }
 
@@ -249,7 +249,7 @@ namespace Game
 
         private void InitItem()
         {
-            List<Item> itemList = new List<Item>
+            IList<IItem> itemList = new List<IItem>
            {
                new Axe("Axe 1",new Point(190, 350),new Size(33, 33)),
                new Sword("Sword 1",new Point(788, 529),new Size(33, 33)),
@@ -273,7 +273,7 @@ namespace Game
 
         private void InitTowns()
         {
-            this.towns = new List<Town>
+            this.towns = new List<ITown>
             {
                 new Town("Town Player", new Point(216, 180), new Size(110, 60), this.player, true),
                 new Town("Town Enemy 1", new Point(674, 659), new Size(83, 39), this.enemies[0], false),
@@ -290,27 +290,27 @@ namespace Game
             List<Hero> enemiesList = new List<Hero>
             {
                 new Spartan("Enemy 1",new Point(674, 691), new Size(161, 153),
-                    new List<Item> {new Sword("Sword Enemy 1", new Point(1, 1), new Size(1, 1))}),
+                    new List<IItem> {new Sword("Sword Enemy 1", new Point(1, 1), new Size(1, 1))}),
 
                 new Viking("Enemy 2", new Point(200, 1658), new Size(161, 153),
-                    new List<Item> {new Axe("Axe Enemy 2", new Point(1, 1), new Size(1, 1))}),
+                    new List<IItem> {new Axe("Axe Enemy 2", new Point(1, 1), new Size(1, 1))}),
 
                 new Barbarian("Enemy 3", new Point(1741, 201), new Size(161, 153),
-                    new List<Item>
+                    new List<IItem>
                     {
                         new Axe("Axe 1 Enemy 3", new Point(1741, 201), new Size(1, 1)),
                         new Axe("Axe 2 Enemy 3", new Point(1741, 201), new Size(1, 1))
                     }),
 
                 new Viking("Enemy 4", new Point(1739, 1666), new Size(161, 153),
-                    new List<Item>
+                    new List<IItem>
                     {
                         new Axe("Axe Enemy 4", new Point(1739, 1666), new Size(1, 1)),
                         new Shield("Shield Enemy 4", new Point(1739, 1666), new Size(1, 1))
                     }),
 
                 new Spartan("Enemy 5", new Point(1066, 1651), new Size(161, 153),
-                    new List<Item>
+                    new List<IItem>
                     {
                         new Spear("Spear Enemy 5", new Point(1066, 1651), new Size(1, 1)),
                         new Shield("Shield Enemy 5", new Point(1066, 1651), new Size(1, 1))
@@ -338,7 +338,7 @@ namespace Game
             }
             return false;
         }
-        public Town GetTown(Point nextPoint)
+        public ITown GetTown(Point nextPoint)
         {
             Rectangle playerRectangle = new Rectangle(nextPoint.X, nextPoint.Y,
                 this.player.ObjectSize.Width, this.player.ObjectSize.Height);

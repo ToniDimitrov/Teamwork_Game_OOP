@@ -15,7 +15,7 @@ namespace Game.Models
         protected string pathImage3;
 
         protected Hero(string id, Point location, Size objectSize, int health, int attack, int defencePoints,
-            List<Item> inventory, string pathImage, string pathImage1, string pathImage2, string pathImage3)
+            IList<IItem> inventory, string pathImage, string pathImage1, string pathImage2, string pathImage3)
             : base(id, location, objectSize)
         {
             this.HealthPoints = health;
@@ -32,7 +32,7 @@ namespace Game.Models
             ApplyInitialItemsEffect();
         }
 
-        protected Hero(string id, Point location, Size objectSize, List<Item> inventory)
+        protected Hero(string id, Point location, Size objectSize, IList<IItem> inventory)
             : base(id, location, objectSize)
         {
             this.Items = inventory;
@@ -100,11 +100,11 @@ namespace Game.Models
 
         public int DefencePoints { get; set; }
 
-        public List<Item> Items { get; set; }
+        public IList<IItem> Items { get; set; }
 
         public bool IsAlive { get; set; }
 
-        public void Attack(Hero enemy)
+        public void Attack(IHero enemy)
         {
             if (enemy.DefencePoints < this.AttackPoints)
             {

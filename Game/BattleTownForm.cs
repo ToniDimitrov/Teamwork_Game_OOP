@@ -20,9 +20,9 @@ namespace Game
     {
         private int NumberCounting = 3;
         private int ImageChangeInex = 1;
-        private readonly Player player;
+        private readonly IPlayer player;
 
-        private readonly Town town;
+        private readonly ITown town;
         private Image PlayerImage;
         private Image EnemyImage;
 
@@ -32,7 +32,7 @@ namespace Game
         private bool fightBegan = false;
         private bool hasSomeoneDied = false;
 
-        public BattleTownForm(Timer sendTimer, Town town, Player player)
+        public BattleTownForm(Timer sendTimer, ITown town, IPlayer player)
         {
             InitializeComponent();
             this.SenderTimer = sendTimer;
@@ -209,7 +209,7 @@ namespace Game
         {
             
         }
-        private static void CheckIfIsAlive(Hero hero)
+        private static void CheckIfIsAlive(IHero hero)
         {
             if (hero.HealthPoints <= 0)
             {

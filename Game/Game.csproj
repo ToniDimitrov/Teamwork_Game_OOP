@@ -66,10 +66,12 @@
     <Compile Include="Interfaces\ICollect.cs" />
     <Compile Include="Interfaces\IDefence.cs" />
     <Compile Include="Interfaces\IDestroyable.cs" />
+    <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IHero.cs" />
     <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IMove.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\ITown.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

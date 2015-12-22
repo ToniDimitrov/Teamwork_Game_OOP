@@ -3,7 +3,7 @@ using Game.Models;
 
 namespace Game.Models
 {
-    public abstract class GameObject
+    public abstract class GameObject : IGameObject
     {
         protected GameObject(string id, Point location, Size objectSize)
         {

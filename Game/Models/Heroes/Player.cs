@@ -8,7 +8,7 @@ namespace Game.Models.Heroes
         private const int stepLength = 2;
         public PlayerRace Race { get; set; }
 
-        public Player(string id, Point location, Size objectSize, List<Item> items, PlayerRace playerRace)
+        public Player(string id, Point location, Size objectSize, IList<IItem> items, PlayerRace playerRace)
             : base(id, location, objectSize, items)
         {
             this.Race = playerRace;
@@ -57,7 +57,7 @@ namespace Game.Models.Heroes
             }
         }
 
-        public void AddItem(Item item)
+        public void AddItem(IItem item)
         {
             this.Items.Add(item);
             this.ApplyItemEffect(item);
@@ -85,7 +85,7 @@ namespace Game.Models.Heroes
 
         }
 
-        public void ApplyItemEffect(Item item)
+        public void ApplyItemEffect(IItem item)
         {
             this.AttackPoints += item.AttackEffect;
             this.DefencePoints += item.DefenceEffect;

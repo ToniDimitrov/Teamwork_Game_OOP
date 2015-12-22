@@ -14,7 +14,7 @@ namespace Game.Models.Heroes
         private const string pathToImage3 = "RevertedSpartan1.png";
 
 
-        public Spartan(string id, Point location, Size objectSize, List<Item> items)
+        public Spartan(string id, Point location, Size objectSize, IList<IItem> items)
             : base(id, location, objectSize, spartanHealth, spartanAttack, spartanDefence, items, pathToImage, pathToImage1, pathToImage2, pathToImage3)
         {
         }
