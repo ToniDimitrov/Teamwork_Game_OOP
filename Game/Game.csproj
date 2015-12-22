@@ -79,6 +79,7 @@
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\Exceptions\InvalidHeroImagePathException.cs" />
     <Compile Include="Models\GameObject.cs" />
     <Compile Include="Models\Hero.cs" />
     <Compile Include="Models\Heroes\Barbarian.cs" />

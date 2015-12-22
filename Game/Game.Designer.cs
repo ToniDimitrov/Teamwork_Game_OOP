@@ -71,15 +71,15 @@ namespace Game
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1016, 640);
-            this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.Controls.Add(this.Map);
+            this.Controls.Add(this.UnderMapWithInpassableAreas);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.Game_Load);         
+            this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);    
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).EndInit();
             this.ResumeLayout(false);

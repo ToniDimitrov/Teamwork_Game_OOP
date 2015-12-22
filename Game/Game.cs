@@ -221,10 +221,10 @@ namespace Game
             InitTowns();
             InitItem();
 
-            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage);
-            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage1);
-            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage2);
-            this.UnderMapWithInpassableAreas.Controls.Add(player.HeroImage3);
+            this.Map.Controls.Add(player.HeroImage);
+            this.Map.Controls.Add(player.HeroImage1);
+            this.Map.Controls.Add(player.HeroImage2);
+            this.Map.Controls.Add(player.HeroImage3);
 
             this.showItemsCountPictureBox = new PictureBox
             {
@@ -236,7 +236,7 @@ namespace Game
             Label itemsCountLabel = new Label { Height = 50 };
             showItemsCountPictureBox.Controls.Add(itemsCountLabel);
             showItemsCountPictureBox.Controls.SetChildIndex(itemsCountLabel, 0);
-            this.UnderMapWithInpassableAreas.Controls.Add(showItemsCountPictureBox);
+            this.Map.Controls.Add(showItemsCountPictureBox);
 
             this.player.HeroImage.Show();
             this.player.HeroImage1.Show();
@@ -265,7 +265,7 @@ namespace Game
            };
             foreach (var item in itemList)
             {
-                this.UnderMapWithInpassableAreas.Controls.Add(item.ItemImage);
+                this.Map.Controls.Add(item.ItemImage);
                 item.ItemImage.Show();
                 this.items.Add(item);
             }

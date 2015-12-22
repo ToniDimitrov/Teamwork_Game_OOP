@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Game.Interfaces;
+using Game.Models.Exceptions;
 
 namespace Game.Models
 {
@@ -46,6 +47,11 @@ namespace Game.Models
 
         public void InitHeroImage()
         {
+            if (pathImage.Length < 3 || pathImage1.Length < 3 || pathImage2.Length < 3 || pathImage3.Length < 3)
+            {
+                throw new InvalidHeroImagePathException("The name of the path of the hero image should be at least 3 symbols long!");
+            }
+             
             this.HeroImage = new PictureBox
             {
                 Image = Image.FromFile(this.pathImage),

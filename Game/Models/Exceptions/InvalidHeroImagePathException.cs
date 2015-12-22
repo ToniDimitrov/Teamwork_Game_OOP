@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Models.Exceptions
 {
-    public class InvalidHeroImagePathException: Exception
+    public class InvalidHeroImagePathException : Exception
     {
         public InvalidHeroImagePathException(string message) : base(message)
         {
