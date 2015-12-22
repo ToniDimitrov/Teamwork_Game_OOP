@@ -47,14 +47,14 @@
             this.GameName.BackColor = System.Drawing.Color.Transparent;
             this.GameName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GameName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameName.Font = new System.Drawing.Font("Adobe Devanagari", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameName.ForeColor = System.Drawing.Color.Black;
             this.GameName.Image = global::Game.Properties.Resources.tumblr_inline_mt4ng7J4wZ1rydp4g;
             this.GameName.Location = new System.Drawing.Point(182, 42);
             this.GameName.Name = "GameName";
             this.GameName.Size = new System.Drawing.Size(432, 77);
             this.GameName.TabIndex = 0;
-            this.GameName.Text = "Name goes here";
+            this.GameName.Text = "Conqueror";
             this.GameName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GameName.UseCompatibleTextRendering = true;
             // 
@@ -67,7 +67,7 @@
             this.NewGame.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.NewGame.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.NewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewGame.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGame.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.NewGame.Location = new System.Drawing.Point(58, 29);
             this.NewGame.Name = "NewGame";
@@ -88,7 +88,7 @@
             this.Options.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Options.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Options.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Options.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Options.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Options.Location = new System.Drawing.Point(58, 160);
             this.Options.Name = "Options";
             this.Options.Size = new System.Drawing.Size(250, 80);
@@ -108,7 +108,7 @@
             this.Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.Location = new System.Drawing.Point(58, 285);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(250, 80);

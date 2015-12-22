@@ -38,7 +38,7 @@ namespace Game
         public void CreatePlayer(string playerName, string playerType)
         {
             PlayerRace type = (PlayerRace)Enum.Parse(typeof(PlayerRace), playerType);
-            this.player = new Player("player", new Point(233, 277), new Size(30, 45), new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) }, type);
+            this.player = new Player(playerName, new Point(233, 277), new Size(30, 45), new List<Item> { new Axe("Axe", new Point(0, 0), new Size(1, 1)) }, type);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -139,6 +139,10 @@ namespace Game
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.A)
+            {
+                EnterTown(towns[2]);
+            }
             switch (e.KeyCode)
             {
                 case Keys.Down:

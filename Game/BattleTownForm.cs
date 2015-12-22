@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,9 +18,13 @@ namespace Game
 {
     public partial class BattleTownForm : Form
     {
+        private int NumberCounting = 3;
+        private int ImageChangeInex = 1;
         private readonly Player player;
 
         private readonly Town town;
+        private Image PlayerImage;
+        private Image EnemyImage;
 
         private int startCounter = 3;
         private int turn = 1;
@@ -33,6 +38,7 @@ namespace Game
             this.SenderTimer = sendTimer;
             this.player = player;
             this.town = town;
+            this.lblPlayer.Text = this.player.Id;
         }
 
         public Timer SenderTimer { get; set; }
@@ -54,8 +60,10 @@ namespace Game
             this.lblPlayerRace.Text = this.player.Race.ToString();
             this.lblPlayerHealth.Text = this.player.HealthPoints.ToString();
             this.lblPlayerAttack.Text = this.player.AttackPoints.ToString();
-            this.lblPlayerDefence.Text = this.player.DefencePoints.ToString();
-            this.pictBoxPlayer.Image = this.player.HeroImage.Image;
+            this.lblPlayerDefence.Text = this.player.DefencePoints.ToString();           
+            string pathImage = player.Race.ToString() + "Attacks/Left/0.png";
+            this.pictBoxPlayer.BackgroundImage = Image.FromFile(pathImage);
+            this.PlayerImage = Image.FromFile(pathImage);
         }
 
         private void InitEnemyInfo()
@@ -64,7 +72,9 @@ namespace Game
             this.lblEnemyHealth.Text = this.town.EnemyHero.HealthPoints.ToString();
             this.lblEnemyAttack.Text = this.town.EnemyHero.AttackPoints.ToString();
             this.lblEnemyDefence.Text = this.town.EnemyHero.DefencePoints.ToString();
-            this.pictBoxEnemy.Image = this.town.EnemyHero.HeroImage.Image;
+            string pathImage = town.EnemyHero.GetType().Name + "Attacks/Right/0.png";
+            this.pictBoxEnemy.BackgroundImage = Image.FromFile(pathImage);
+            this.EnemyImage=Image.FromFile(pathImage);
         }
 
         private void timerBattle_Tick(object sender, EventArgs e)
@@ -74,57 +84,65 @@ namespace Game
                 var BattleInformation = "";
                 if (startCounter != 0)
                 {
-                    BattleInformation = string.Format("The battle will start in: {0}", startCounter);
+                    string pathImage = "FightCounting/" + NumberCounting.ToString() + ".png";
+                    if (NumberCounting > 0)
+                    {
+                        this.TblCounting.BackgroundImage = Image.FromFile(pathImage);
+                        this.NumberCounting--;
+                    }
+
                 }
                 else
                 {
-                    BattleInformation = "FIGHT!";
+                    string pathImage = "FightCounting/Fight.png";
+                    this.TblCounting.BackgroundImage = Image.FromFile(pathImage);
+                    this.LblTurnNumber.Text = turn.ToString();
+                    this.TblTurns.Visible = true;                  
                     fightBegan = true;
                 }
-
-                lblBattleInformation.Text = BattleInformation;
-                lblBattleInformation.TextAlign = ContentAlignment.MiddleCenter;
+                              
                 startCounter--;
             }
             else
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-                player.SoundLocation = "RageOfBlades.wav";
-                player.Load();
-                player.Play();
-
+                string turnStr = turn.ToString();
+                this.LblTurnNumber.Text = turnStr;
                 if (this.player.IsAlive && this.town.EnemyHero.IsAlive)
                 {
                     int currentPlayerHealth = 0;
                     int currentEnemyHealth = 0;
-
-                    lblTurn.Text = string.Format("Turn: {0}", turn);
+                                                 
                     if (turn % 2 != 0)
                     {
+                        timer1.Stop();
+                        pictBoxPlayer.BackgroundImage = PlayerImage;
+                        timer2.Start();
+                                              
                         currentPlayerHealth = this.player.HealthPoints;
                         currentEnemyHealth = this.town.EnemyHero.HealthPoints;
 
-                        lblBattleInformation.Text = @"Player attacks..";
-
-                        Thread.Sleep(3500);
-
+                        lblBattleInformation.Text = @"Enemy attacks..";
+                        tableLayoutPanel1.Visible = true;
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                        player.SoundLocation = "RageOfBlades.wav";
+                        player.Load();
+                        player.Play();
+                        //Thread.Sleep(3500);
+                     
                         this.player.Attack(this.town.EnemyHero);
-
 
 
                         if (this.player.HealthPoints == currentPlayerHealth)
                         {
-                            lblBattleInformation.Text =
-                                string.Format("You attacked the enemy and took him {0} health points!",
-                                    currentEnemyHealth - this.town.EnemyHero.HealthPoints);
+                            string text = "-" + (currentEnemyHealth - this.town.EnemyHero.HealthPoints);
+                            this.LblEnemyMinusHealth.Text = text; 
+                            TblEnemyMinusHealth.Visible = true;                          
                         }
                         else if (this.player.HealthPoints <= currentPlayerHealth)
                         {
 
-                            lblBattleInformation.Text =
-                                string.Format(
-                                    "You attacked the enemy but his defence points are higher than your attack points, so you lose {0} health points",
-                                    currentPlayerHealth - this.player.HealthPoints);
+                            this.LblPlayerMinusHealh.Text = string.Format("-{0}",(currentPlayerHealth - this.player.HealthPoints));
+                            TblPlayerMinusHealth.Visible = true;         
                         }
                         this.lblPlayerHealth.Text = this.player.HealthPoints.ToString();
                         this.lblEnemyHealth.Text = this.town.EnemyHero.HealthPoints.ToString();
@@ -139,26 +157,33 @@ namespace Game
                     }
                     else
                     {
+                        timer1.Start();
+                        timer2.Stop();                       
+                        pictBoxEnemy.BackgroundImage = EnemyImage;
                         currentPlayerHealth = this.player.HealthPoints;
                         currentEnemyHealth = this.town.EnemyHero.HealthPoints;
-                        lblBattleInformation.Text = @"Enemy Attacks..";
+                        lblBattleInformation.Text = @"Player Attacks..";
 
-                        Thread.Sleep(3500);
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+                        player.SoundLocation = "RageOfBlades.wav";
+                        player.Load();
+                        player.Play();
+                        //Thread.Sleep(3500);
 
                         this.town.EnemyHero.Attack(this.player);
 
                         if (this.town.EnemyHero.HealthPoints == currentEnemyHealth)
                         {
-                            lblBattleInformation.Text =
-                                string.Format("The enemy attacked you and took you {0} health points!",
-                                    currentPlayerHealth - this.player.HealthPoints);
+
+                            this.LblPlayerMinusHealh.Text = string.Format("-{0}",(currentPlayerHealth - this.player.HealthPoints));
+                            TblPlayerMinusHealth.Visible = true;
+
                         }
                         else if (this.town.EnemyHero.HealthPoints < currentEnemyHealth)
                         {
-                            lblBattleInformation.Text =
-                                string.Format(
-                                    "The enemy attacked you but your defence points are higher than his attack points, so he loses {0} health points",
-                                    currentEnemyHealth - this.town.EnemyHero.HealthPoints);
+                            string text = "-" + (currentEnemyHealth - this.town.EnemyHero.HealthPoints);
+                            this.LblEnemyMinusHealth.Text = text;
+                            TblEnemyMinusHealth.Visible = true;
                         }
                         this.lblPlayerHealth.Text = this.player.HealthPoints.ToString();
                         this.lblEnemyHealth.Text = this.town.EnemyHero.HealthPoints.ToString();
@@ -168,15 +193,22 @@ namespace Game
                         if (hasSomeoneDied)
                         {
                             this.timerBattle.Stop();
+                            this.timer1.Stop();
+                            this.timer2.Stop();
 
                         }
                     }
 
-                    turn++;
+                    turn++;                    
+                    timerBattle.Enabled=true;
                 }
             }
         }
 
+        private void AnimatePlayerAttack()
+        {
+            
+        }
         private static void CheckIfIsAlive(Hero hero)
         {
             if (hero.HealthPoints <= 0)
@@ -206,5 +238,40 @@ namespace Game
                 this.town.IsConquered = true;
             }
         }
+
+        private void TblPlayerInformation_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TunrMovesTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //MessageBox.Show("aaaaaaaaaaa");
+            if (ImageChangeInex > 4)
+            {
+                ImageChangeInex = 1;
+            }
+            string pathImage = player.Race.ToString() + "Attacks/Left/"+ImageChangeInex+".png";
+            this.pictBoxPlayer.BackgroundImage=Image.FromFile(pathImage);
+            ImageChangeInex++;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (ImageChangeInex > 4)
+            {
+                ImageChangeInex = 1;
+            }
+            string pathImage = town.EnemyHero.GetType().Name + "Attacks/Right/" + ImageChangeInex + ".png";
+            this.pictBoxEnemy.BackgroundImage = Image.FromFile(pathImage);
+            ImageChangeInex++;
+        }
     }
+
+    
 }

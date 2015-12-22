@@ -143,7 +143,10 @@
     <None Include="Resources\map.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\WordHealth.png" />
     <None Include="Resources\tumblr_inline_mt4ng7J4wZ1rydp4g.png" />
+    <None Include="Resources\Castle.jpg" />
+    <None Include="Resources\TurnImage.png" />
     <Content Include="Resources\Vampire_One-Handed_Axe.png" />
     <Content Include="Resources\Vampire_One-Handed_Axe33x33.png" />
     <None Include="Resources\VikingButton.png" />

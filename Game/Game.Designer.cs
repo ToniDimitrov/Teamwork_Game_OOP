@@ -77,9 +77,9 @@ namespace Game
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = " ";
-            this.Load += new System.EventHandler(this.Game_Load);
+            this.Load += new System.EventHandler(this.Game_Load);         
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);    
             ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnderMapWithInpassableAreas)).EndInit();
             this.ResumeLayout(false);
