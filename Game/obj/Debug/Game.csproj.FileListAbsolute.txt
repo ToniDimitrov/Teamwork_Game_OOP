@@ -62,3 +62,16 @@ C:\Users\Pavlinnnn\Desktop\Team\Game\obj\Debug\Game.MainMenu.resources
 C:\Users\Pavlinnnn\Desktop\Team\Game\obj\Debug\Game.Properties.Resources.resources
 C:\Users\Pavlinnnn\Desktop\Team\Game\obj\Debug\Game.BattleTownForm.resources
 C:\Users\Pavlinnnn\Desktop\Team\Game\obj\Debug\Game.csproj.GenerateResource.Cache
+C:\Users\Pavlinnnn\Desktop\Team2\Game\bin\Debug\Game.exe.config
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.exe
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.pdb
+C:\Users\Pavlinnnn\Desktop\Team2\Game\bin\Debug\Game.exe
+C:\Users\Pavlinnnn\Desktop\Team2\Game\bin\Debug\Game.pdb
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.csprojResolveAssemblyReference.cache
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.ConqueredTownForm.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.CreatePlayer.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.Game.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.MainMenu.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.Properties.Resources.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.BattleTownForm.resources
+C:\Users\Pavlinnnn\Desktop\Team2\Game\obj\Debug\Game.csproj.GenerateResource.Cache

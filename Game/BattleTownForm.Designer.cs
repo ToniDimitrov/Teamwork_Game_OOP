@@ -610,7 +610,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BattleTownForm";
-            this.Text = "Town";
+            this.Text = "c";
             this.Load += new System.EventHandler(this.TownForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictBoxEnemy)).EndInit();

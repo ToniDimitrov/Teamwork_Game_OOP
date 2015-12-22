@@ -177,10 +177,11 @@ namespace Game
                 this.player.DefencePoints,
                 this.player.HealthPoints);
 
-            showItemsCountPictureBox.Location = new System.Drawing.Point(this.player.Location.X, this.player.Location.Y - 70);
+            showItemsCountPictureBox.Location = new System.Drawing.Point(this.player.Location.X+20, this.player.Location.Y - 70);
+            showItemsCountPictureBox.BringToFront();
             showItemsCountPictureBox.Show();
 
-            System.Timers.Timer showItemsTimer = new System.Timers.Timer(2000);
+            System.Timers.Timer showItemsTimer = new System.Timers.Timer(2500);
             showItemsTimer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
 
             //set this so that the timer is stopped once the elaplsed event is fired
@@ -228,12 +229,21 @@ namespace Game
 
             this.showItemsCountPictureBox = new PictureBox
             {
-                Image = Image.FromFile("testShowItemsCount.png"),
-                Size = new System.Drawing.Size(200, 70),
+                BackColor = Color.Transparent,
+                BackgroundImage = Image.FromFile("InfoBox.png"),
+                BackgroundImageLayout = ImageLayout.Stretch,
+                Size = new System.Drawing.Size(320, 250),
                 Location = new System.Drawing.Point(this.Width / 2, this.Height / 2),
             };
             showItemsCountPictureBox.Visible = false;
-            Label itemsCountLabel = new Label { Height = 50 };
+            Label itemsCountLabel = new Label
+            {
+                BackColor = Color.Transparent,
+                Font = new Font("Lithos Pro Regular", 15),
+                AutoSize = false,
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
             showItemsCountPictureBox.Controls.Add(itemsCountLabel);
             showItemsCountPictureBox.Controls.SetChildIndex(itemsCountLabel, 0);
             this.Map.Controls.Add(showItemsCountPictureBox);

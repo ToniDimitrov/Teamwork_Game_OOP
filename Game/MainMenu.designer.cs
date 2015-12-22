@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.GameName = new System.Windows.Forms.Label();
             this.NewGame = new System.Windows.Forms.Button();
-            this.Options = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.BluringTimer = new System.Windows.Forms.Timer(this.components);
             this.BluringPicture = new System.Windows.Forms.PictureBox();
@@ -69,7 +68,7 @@
             this.NewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewGame.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewGame.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.NewGame.Location = new System.Drawing.Point(58, 29);
+            this.NewGame.Location = new System.Drawing.Point(58, 61);
             this.NewGame.Name = "NewGame";
             this.NewGame.Size = new System.Drawing.Size(250, 80);
             this.NewGame.TabIndex = 1;
@@ -78,26 +77,6 @@
             this.NewGame.Click += new System.EventHandler(this.NewGame_Click);
             this.NewGame.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
             this.NewGame.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
-            // 
-            // Options
-            // 
-            this.Options.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Options.BackgroundImage = global::Game.Properties.Resources.Button_Background;
-            this.Options.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Options.FlatAppearance.BorderSize = 0;
-            this.Options.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Options.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Options.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Options.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Options.Location = new System.Drawing.Point(58, 160);
-            this.Options.Name = "Options";
-            this.Options.Size = new System.Drawing.Size(250, 80);
-            this.Options.TabIndex = 2;
-            this.Options.Text = "Options";
-            this.Options.UseVisualStyleBackColor = true;
-            this.Options.Click += new System.EventHandler(this.Options_Click);
-            this.Options.MouseEnter += new System.EventHandler(this.NewGame_MouseEnter);
-            this.Options.MouseLeave += new System.EventHandler(this.NewGame_MouseLeave);
             // 
             // Exit
             // 
@@ -109,7 +88,7 @@
             this.Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Lithos Pro Regular", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(58, 285);
+            this.Exit.Location = new System.Drawing.Point(58, 255);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(250, 80);
             this.Exit.TabIndex = 0;
@@ -142,14 +121,13 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.NewGame, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Options, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Exit, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Exit, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(212, 155);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.65659F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.17171F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.17171F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.5689F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.4311F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(367, 388);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
@@ -178,7 +156,6 @@
 
         private System.Windows.Forms.Label GameName;
         private System.Windows.Forms.Button NewGame;
-        private System.Windows.Forms.Button Options;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Timer BluringTimer;
         private System.Windows.Forms.PictureBox BluringPicture;
